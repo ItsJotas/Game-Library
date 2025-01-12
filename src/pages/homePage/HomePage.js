@@ -9,11 +9,15 @@ const HomePage = () => {
   const [sortDirection, setSortDirection] = useState("desc");
   const [searchQuery, setSearchQuery] = useState("");
 
+  const backendIP = process.env.REACT_APP_BACKEND_IP;
+  const backendPort = process.env.REACT_APP_BACKEND_PORT;
+  const apiUrl = `http://${backendIP}:${backendPort}/game`; 
+
   const fetchGames = useCallback(async (pageNumber, query) => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:8080/game?pageNumber=${pageNumber}&pageSize=20&orderBy=${sortDirection}&gameName=${query}`
+        `${apiUrl}?pageNumber=${pageNumber}&pageSize=20&orderBy=${sortDirection}&gameName=${query}`
       );
       const data = await response.json();
       if (data.content && data.content.length > 0) { 
@@ -26,7 +30,7 @@ const HomePage = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [sortDirection]);
+  }, [apiUrl, sortDirection]);
   
 
   const handleScroll = useCallback(() => {
