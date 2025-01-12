@@ -1,4 +1,19 @@
 .homepage {
-    margin-left: 250px; 
-    padding: 20px;
-  }  
+  margin-left: 250px; 
+  padding: 20px;
+  min-height: 100vh; 
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .homepage {
+    margin-left: 200px; 
+  }
+}
+
+@media (max-width: 500px) {
+  .homepage {
+    margin-left: 0; 
+  }
+}
