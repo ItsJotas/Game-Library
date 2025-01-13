@@ -20,8 +20,13 @@ const HomePage = () => {
         `${apiUrl}?pageNumber=${pageNumber}&pageSize=20&orderBy=${sortDirection}&gameName=${query}`
       );
       const data = await response.json();
-      if (data.content && data.content.length > 0) { 
-        setGames((prevGames) => [...prevGames, ...data.content]); 
+      if (data.content && data.content.length > 0) {
+        setGames((prevGames) => {
+          const newGames = data.content.filter((game) => 
+            !prevGames.some((prevGame) => prevGame.id === game.id)
+          );
+          return [...prevGames, ...newGames];
+        });
       } else {
         setHasMore(false);
       }
@@ -30,8 +35,8 @@ const HomePage = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [apiUrl, sortDirection]);
-  
+  }, [apiUrl, sortDirection]);  
+
 
   const handleScroll = useCallback(() => {
     if (
