@@ -1,9 +1,14 @@
 .homepage {
-  margin-left: 250px; 
-  padding: 20px;
-  min-height: 100vh; 
+  margin-left: 250px;  
+  height: 100vh;
   box-sizing: border-box;
   transition: margin-left 0.3s ease-in-out;
+}
+
+.header{
+  width: 100%;
+  background-color: #293442;
+  color: #ccc;
 }
 
 @media (max-width: 768px) {

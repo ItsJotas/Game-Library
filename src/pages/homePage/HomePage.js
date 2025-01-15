@@ -6,7 +6,7 @@ const HomePage = () => {
   const [page, setPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
-  const [sortDirection, setSortDirection] = useState("desc");
+  const [sortDirection, setSortDirection] = useState("asc");
   const [searchQuery, setSearchQuery] = useState("");
 
   const backendIP = process.env.REACT_APP_BACKEND_IP;
@@ -74,28 +74,34 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      <div style={{ textAlign: 'center', marginTop: '50px' }}>
-        <h1>Game Library</h1>
-        <div style={{ marginBottom: "20px" }}>
-          <button onClick={toggleSortDirection}>
-            Ranking: {sortDirection === "asc" ? "Ascendente" : "Descendente"}
-          </button>
-        </div>
-        <div style={{ marginBottom: "20px" }}>
-          <input
-            type="text"
-            placeholder="Pesquisar por nome"
-            value={searchQuery}
-            onChange={handleSearchChange}
-            style={{
-              padding: "10px",
-              fontSize: "16px",
-              borderRadius: "5px",
-              border: "1px solid #ccc",
-              width: "80%", 
-              margin: "0 auto", 
+      <div style={{ textAlign: 'center'}}>
+        <div class="header">
+
+          <h1>Raking</h1>
+
+          <div style={{ marginBottom: "20px" }}>
+            <input
+              type="text"
+              placeholder="Pesquisar por nome"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              style={{
+                padding: "10px",
+                fontSize: "16px",
+                borderRadius: "5px",
+                border: "1px solid #ccc",
+                width: "80%", 
+                margin: "0 auto", 
             }}/>
+          </div>
+          
+          <button onClick={toggleSortDirection}>
+            Ranking: {sortDirection === "asc" ? "Asc" : "Desc"}
+          </button>
+
         </div>
+        
+        
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           {games.map((game, index) => (
             <div
