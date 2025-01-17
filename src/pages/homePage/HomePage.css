@@ -3,7 +3,7 @@
 :root {
   --font-color-white: #e7e7e7;
   --search-bar-duration: 0.5s;
-  --search-bar-hover-color: #17222f;
+  --search-bar-hover-color: #1b2838;
 }
 
 .homepage {
@@ -51,11 +51,13 @@
 
 .searchbar:hover {
   background-color: var(--search-bar-hover-color);
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 .searchbar:focus {
   outline: none;
   background-color: var(--search-bar-hover-color);
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
   color: var(--font-color-white);
 }
 
