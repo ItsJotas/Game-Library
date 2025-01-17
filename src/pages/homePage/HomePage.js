@@ -77,28 +77,20 @@ const HomePage = () => {
       <div style={{ textAlign: 'center'}}>
         <div class="header">
 
-          <h1>Raking</h1>
+          <h1>Ranking</h1>
 
-          <div style={{ marginBottom: "20px" }}>
+          <div class="searchbarfilter">
             <input
               type="text"
-              placeholder="Pesquisar por nome"
+              placeholder="Search by Name"
               value={searchQuery}
               onChange={handleSearchChange}
-              style={{
-                padding: "10px",
-                fontSize: "16px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-                width: "80%", 
-                margin: "0 auto", 
-            }}/>
-          </div>
-          
-          <button onClick={toggleSortDirection}>
-            Ranking: {sortDirection === "asc" ? "Asc" : "Desc"}
-          </button>
+              class="searchbar"/>
 
+              <button onClick={toggleSortDirection} class="sortbutton">
+                Ranking: {sortDirection === "asc" ? "Asc" : "Desc"}
+              </button>
+          </div>
         </div>
         
         
