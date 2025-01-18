@@ -3,7 +3,10 @@
 :root {
   --font-color-white: #e7e7e7;
   --search-bar-duration: 0.5s;
+  --search-bar-color: #243242;
   --search-bar-hover-color: #1b2838;
+  --font-moderustic: Moderustic;
+  --border-radius-bar: 5px
 }
 
 .homepage {
@@ -19,7 +22,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Moderustic;
+  font-family: var(--font-moderustic);
 }
 
 .header h1 {
@@ -39,11 +42,11 @@
 .searchbar {
   padding: 8px;
   font-size: 14px;
-  border-radius: 5px;
-  background-color: #243242;
+  border-radius: var(--border-radius-bar);
+  background-color: var(--search-bar-color);
   border: 0px;
   margin: 0 auto;
-  font-family: Moderustic;
+  font-family: var(--font-moderustic);
   flex-grow: 1;
   transition-property: background-color, box-shadow;
   transition-duration: var(--search-bar-duration), var(--search-bar-duration);
@@ -51,7 +54,7 @@
 
 .searchbar:hover {
   background-color: var(--search-bar-hover-color);
-  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .searchbar:focus {
@@ -64,7 +67,18 @@
 .sortbutton {
   font-size: 14px;
   padding: 8px;
-  font-family: Moderustic;
+  font-family: var(--font-moderustic);
+  border-radius: var(--border-radius-bar);
+  background-color: var(--search-bar-hover-color);
+  color: var(--font-color-white);
+  border: 0px;
+  transition-property: background-color;
+  transition-duration: var(--search-bar-duration);
+  cursor: pointer;
+}
+
+.sortbutton:hover {
+  background-color: var(--search-bar-color);
 }
 
 @media (max-width: 768px) {
