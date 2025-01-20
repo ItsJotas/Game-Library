@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
   --font-color-white: #e7e7e7;
+
   --search-bar-duration: 0.5s;
   --search-bar-color: #243242;
   --search-bar-hover-color: #1b2838;
+
   --font-moderustic: Moderustic;
+  --font-lato: Lato;
+
   --border-radius-bar: 5px
 }
 
@@ -72,13 +77,70 @@
   background-color: var(--search-bar-hover-color);
   color: var(--font-color-white);
   border: 0px;
-  transition-property: background-color;
-  transition-duration: var(--search-bar-duration);
+  transition-property: background-color, box-shadow;
+  transition-duration: var(--search-bar-duration), var(--search-bar-duration);
   cursor: pointer;
 }
 
 .sortbutton:hover {
   background-color: var(--search-bar-color);
+  box-shadow: inset 0px 0px 10px rgba(118, 118, 118, 0.2);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #acbcd1;
+}
+
+.gameCard {
+  border-radius: 10px;
+  margin: 10px 0;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.ranking {
+  font-size: 30px;
+  width: 20%;
+  min-width: 60px;
+  align-self: center;
+  font-family: var(--font-lato);
+}
+
+.rating {
+  font-family: var(--font-lato);
+  font-size: 16px;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gameName {
+  font-size: 30px;
+  padding: 10px 10px;
+  border-radius: 0 10px 0 0;
+  width: 100%;
+  background: linear-gradient(to right, rgba(47, 51, 52, 1), rgba(47, 51, 52, 0));  color: var(--font-color-white);
+  text-align: left;
+  font-family: var(--font-moderustic);
+}
+
+.gameInfo {
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  color: var(--font-color-white);
+  font-family: var(--font-lato);
+  padding: 0px 0px 10px 10px;
+  background: linear-gradient(to right, rgba(47, 51, 52, 1), rgba(47, 51, 52, 0));  color: var(--font-color-white);
 }
 
 @media (max-width: 768px) {

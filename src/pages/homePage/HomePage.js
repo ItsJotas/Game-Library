@@ -9,6 +9,30 @@ const HomePage = () => {
   const [sortDirection, setSortDirection] = useState("asc");
   const [searchQuery, setSearchQuery] = useState("");
 
+  const CampaignStatusMessages = {
+    NO_CAMPAIGN: "No Campaign",
+    NOT_FINISHED: "Campaign not Finished",
+    FINISHED: "Campaign Finished",
+    ONE_HUNDRED_PERCENT: "100% Completed",
+    NOT_PLAYED: "Campaign not Played",
+    JUST_LORE: "No Story Mode, just Lore"
+  }
+
+  const MultiplayerStatusMessages = {
+    NO_MULTIPLAYER: "No Multiplayer",
+    HAS_MULTIPLAYER: "Multiplayer Played",
+    COMPETITIVE: "Competitive",
+    COOP_STORY_MODE: "Coop Story Mode Played",
+    NOT_PLAYED: "Multiplayer not Played"
+  }
+
+  const AchievementsStatusMessages = {
+    NO_ACHIEVEMENTS: "Game has no Achievements",
+    PLAYER_HAS_NO_ACHIEVEMENTS: "Player has no Achievements",
+    PLAYER_HAS_SOME_ACHIEVEMENTS: "Player got some Achievements",
+    ALL_ACHIEVEMENTS: "Player got them All"
+  }
+
   const backendIP = process.env.REACT_APP_BACKEND_IP;
   const backendPort = process.env.REACT_APP_BACKEND_PORT;
   const apiUrl = `http://${backendIP}:${backendPort}/game`; 
@@ -48,6 +72,10 @@ const HomePage = () => {
       setPage((prevPage) => prevPage + 1);
     }
   }, [isLoading, hasMore]);
+
+  const getEnumMessage = (enumType, value) => {
+    return enumType[value] || "Unknown";
+  };
 
   useEffect(() => {
     fetchGames(page, searchQuery);
@@ -94,25 +122,31 @@ const HomePage = () => {
         </div>
         
         
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div class="main">
           {games.map((game, index) => (
-            <div
-              key={index}
-              style={{
-                border: '1px solid #ccc',
-                borderRadius: '10px',
-                padding: '20px',
-                margin: '10px 0',
-                width: '90%', 
-                maxWidth: '800px', 
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
-              }}>
-              <h3>{game.name}</h3>
-              <p><strong>Rate:</strong> {game.totalRating}</p>
-              <p><strong>Lançador:</strong> {game.launcher}</p>
-              <p><strong>Modo História:</strong> {game.storyModeStatusEnum}</p>
-              <p><strong>Multiplayer:</strong> {game.multiplayerStatusEnum}</p>
-              <p><strong>Data de Finalização:</strong> {game.finishDate || "N/A"}</p>
+            <div key={index} class="gameCard">
+              <div class="ranking">
+                <p>#{game.ranking}</p>
+                <p class="rating">({game.totalRating})</p>
+              </div>
+
+              <div class="cardInfo">
+                <h3 class="gameName">{game.name}</h3>
+
+                <div class="gameInfo">
+                  <p><strong>Story Mode:</strong> {getEnumMessage(CampaignStatusMessages, game.campaignStatusEnum)}</p>
+                  <p><strong>Multiplayer:</strong> {getEnumMessage(MultiplayerStatusMessages, game.multiplayerStatusEnum)}</p>
+                  <p><strong>Achievements:</strong> {getEnumMessage(AchievementsStatusMessages, game.achievementsStatusEnum)}</p>
+                  <p><strong>Launcher:</strong> {game.launcher}</p>
+                  <p><strong>{game.allAchievementsDate ? "All Achievements Unlocked on:"
+                            : game.oneHundredPercentDate ? "100% Completed on:"
+                            : game.finishDate ? "Finished on:"
+                            : "Finished on:"}
+                  </strong> {game.allAchievementsDate ||
+                    game.oneHundredPercentDate || game.finishDate || "N/A"}</p>
+                </div>
+              </div>
+              
             </div>
           ))}
         </div>
