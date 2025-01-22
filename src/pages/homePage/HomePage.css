@@ -95,26 +95,11 @@
 }
 
 .gameCard {
-  border-radius: 10px;
   margin: 10px 0;
   width: 90%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-}
-
-.ranking {
-  font-size: 30px;
-  width: 20%;
-  min-width: 60px;
-  align-self: center;
-  font-family: var(--font-lato);
-}
-
-.rating {
-  font-family: var(--font-lato);
-  font-size: 16px;
 }
 
 .cardInfo {
@@ -126,11 +111,11 @@
 .gameName {
   font-size: 30px;
   padding: 10px 10px;
-  border-radius: 0 10px 0 0;
   width: 100%;
-  background: linear-gradient(to right, rgba(47, 51, 52, 1), rgba(47, 51, 52, 0));  color: var(--font-color-white);
   text-align: left;
   font-family: var(--font-moderustic);
+  background-color: #454749;
+  color: var(--font-color-white);
 }
 
 .gameInfo {
@@ -139,8 +124,9 @@
   font-size: 16px;
   color: var(--font-color-white);
   font-family: var(--font-lato);
-  padding: 0px 0px 10px 10px;
-  background: linear-gradient(to right, rgba(47, 51, 52, 1), rgba(47, 51, 52, 0));  color: var(--font-color-white);
+  padding: 10px 0px 10px 10px;
+  background-color: #3c3d3e;
+  line-height: 22px;
 }
 
 @media (max-width: 768px) {

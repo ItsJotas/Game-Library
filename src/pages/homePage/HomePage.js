@@ -100,6 +100,16 @@ const HomePage = () => {
     setSearchQuery(event.target.value);
   };
 
+  const formatDate = (dateString) => {
+    if (!dateString) return "N/A";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+  };  
+
   return (
     <div className="homepage">
       <div style={{ textAlign: 'center'}}>
@@ -125,25 +135,20 @@ const HomePage = () => {
         <div class="main">
           {games.map((game, index) => (
             <div key={index} class="gameCard">
-              <div class="ranking">
-                <p>#{game.ranking}</p>
-                <p class="rating">({game.totalRating})</p>
-              </div>
 
               <div class="cardInfo">
-                <h3 class="gameName">{game.name}</h3>
+                <h3 class="gameName">{game.ranking} - {game.name} ({game.totalRating})</h3>
 
                 <div class="gameInfo">
-                  <p><strong>Story Mode:</strong> {getEnumMessage(CampaignStatusMessages, game.campaignStatusEnum)}</p>
-                  <p><strong>Multiplayer:</strong> {getEnumMessage(MultiplayerStatusMessages, game.multiplayerStatusEnum)}</p>
-                  <p><strong>Achievements:</strong> {getEnumMessage(AchievementsStatusMessages, game.achievementsStatusEnum)}</p>
-                  <p><strong>Launcher:</strong> {game.launcher}</p>
-                  <p><strong>{game.allAchievementsDate ? "All Achievements Unlocked on:"
-                            : game.oneHundredPercentDate ? "100% Completed on:"
-                            : game.finishDate ? "Finished on:"
-                            : "Finished on:"}
-                  </strong> {game.allAchievementsDate ||
-                    game.oneHundredPercentDate || game.finishDate || "N/A"}</p>
+                  <p>Story Mode: <strong>{getEnumMessage(CampaignStatusMessages, game.campaignStatusEnum)}</strong></p>
+                  <p>Multiplayer: <strong>{getEnumMessage(MultiplayerStatusMessages, game.multiplayerStatusEnum)}</strong></p>
+                  <p>Achievements: <strong>{getEnumMessage(AchievementsStatusMessages, game.achievementsStatusEnum)}</strong></p>
+                  <p>Launcher: <strong>{game.launcher}</strong></p>
+                  <p>{game.allAchievementsDate ? "All Achievements Unlocked on:"
+                      : game.oneHundredPercentDate ? "100% Completed on:"
+                      : game.finishDate ? "Finished on:"
+                      : "Finished on:"}
+                  <strong> {formatDate(game.allAchievementsDate || game.oneHundredPercentDate || game.finishDate)}</strong></p>
                 </div>
               </div>
               
