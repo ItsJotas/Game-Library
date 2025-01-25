@@ -108,10 +108,27 @@
   flex-grow: 1;
 }
 
+.nameRating {
+  display: flex;
+}
+
+.gameRating {
+  background-color: #454749;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.gameRating p {
+  font-family: var(--font-moderustic);
+  color: var(--font-color-white);
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .gameName {
   font-size: 30px;
   padding: 10px 10px;
-  width: 100%;
   text-align: left;
   font-family: var(--font-moderustic);
   background-color: #454749;
@@ -139,8 +156,8 @@
 }
 
 .gameImage img {
-  height: 90%; 
-  width: 90%;
+  height: 98%; 
+  width: 98%;
 }
 
 @media (max-width: 768px) {

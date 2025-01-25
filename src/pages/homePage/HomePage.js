@@ -131,7 +131,6 @@ const HomePage = () => {
           </div>
         </div>
         
-        
         <div class="main">
           {games.map((game, index) => (
             <div key={index} class="gameCard">
@@ -144,7 +143,13 @@ const HomePage = () => {
               </div>
 
               <div class="cardInfo">
-                <h3 class="gameName">{game.ranking} - {game.name} ({game.totalRating})</h3>
+
+                <div class="nameRating">
+                  <h3 class="gameName">{game.ranking} - {game.name}</h3>
+                  <div  class="gameRating">
+                    <p>({game.totalRating})</p>
+                  </div>
+                </div>
 
                 <div class="gameInfo">
                   <p>Story Mode: <strong>{getEnumMessage(CampaignStatusMessages, game.campaignStatusEnum)}</strong></p>
