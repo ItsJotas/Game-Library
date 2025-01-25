@@ -99,13 +99,13 @@
   width: 90%;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: stretch; 
 }
 
 .cardInfo {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  flex-grow: 1;
 }
 
 .gameName {
@@ -120,6 +120,7 @@
 
 .gameInfo {
   width: 100%;
+  height: 100%;
   text-align: left;
   font-size: 16px;
   color: var(--font-color-white);
@@ -127,6 +128,19 @@
   padding: 10px 0px 10px 10px;
   background-color: #3c3d3e;
   line-height: 22px;
+}
+
+.gameImage {
+  background-color: #3c3d3e;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameImage img {
+  height: 90%; 
+  width: 90%;
 }
 
 @media (max-width: 768px) {

@@ -136,6 +136,13 @@ const HomePage = () => {
           {games.map((game, index) => (
             <div key={index} class="gameCard">
 
+              <div class="gameImage">                
+                <img
+                  src={game.imageUrl}
+                  alt={`Cover of ${game.name}`}
+                />
+              </div>
+
               <div class="cardInfo">
                 <h3 class="gameName">{game.ranking} - {game.name} ({game.totalRating})</h3>
 
@@ -151,7 +158,6 @@ const HomePage = () => {
                   <strong> {formatDate(game.allAchievementsDate || game.oneHundredPercentDate || game.finishDate)}</strong></p>
                 </div>
               </div>
-              
             </div>
           ))}
         </div>
