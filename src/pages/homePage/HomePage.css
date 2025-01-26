@@ -4,14 +4,14 @@
 :root {
   --font-color-white: #e7e7e7;
 
+  --header-background-color: #18191b;
+  --search-bar-color: #383c42;
+  --search-bar-hover-color: #4e5358;
+
   --search-bar-duration: 0.5s;
-  --search-bar-color: #243242;
-  --search-bar-hover-color: #1b2838;
 
   --font-moderustic: Moderustic;
   --font-lato: Lato;
-
-  --border-radius-bar: 5px
 }
 
 .homepage {
@@ -23,11 +23,11 @@
 
 .header {
   width: 100%;
-  background-color: #334760;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: var(--font-moderustic);
+  background-color: var(--header-background-color);
 }
 
 .header h1 {
@@ -47,25 +47,27 @@
 .searchbar {
   padding: 8px;
   font-size: 14px;
-  border-radius: var(--border-radius-bar);
+  border-radius: 5px;
   background-color: var(--search-bar-color);
   border: 0px;
   margin: 0 auto;
   font-family: var(--font-moderustic);
   flex-grow: 1;
-  transition-property: background-color, box-shadow;
-  transition-duration: var(--search-bar-duration), var(--search-bar-duration);
+  transition-property: background-color;
+  transition-duration: var(--search-bar-duration);
+}
+
+.searchbar::placeholder {
+  color: var(--font-color-white);
 }
 
 .searchbar:hover {
   background-color: var(--search-bar-hover-color);
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .searchbar:focus {
   outline: none;
   background-color: var(--search-bar-hover-color);
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
   color: var(--font-color-white);
 }
 
@@ -74,24 +76,23 @@
   padding: 8px;
   font-family: var(--font-moderustic);
   border-radius: var(--border-radius-bar);
-  background-color: var(--search-bar-hover-color);
+  background-color: var(--search-bar-color);
   color: var(--font-color-white);
   border: 0px;
-  transition-property: background-color, box-shadow;
-  transition-duration: var(--search-bar-duration), var(--search-bar-duration);
+  transition-property: background-color;
+  transition-duration: var(--search-bar-duration);
   cursor: pointer;
 }
 
 .sortbutton:hover {
-  background-color: var(--search-bar-color);
-  box-shadow: inset 0px 0px 10px rgba(118, 118, 118, 0.2);
+  background-color: var(--search-bar-hover-color);
 }
 
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #acbcd1;
+  background-color: var(--search-bar-color);
 }
 
 .gameCard {
@@ -108,12 +109,34 @@
   flex-grow: 1;
 }
 
+.gameImage {
+  background-color: var(--header-background-color);
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameImage img {
+  height: 98%; 
+  width: 98%;
+}
+
 .nameRating {
   display: flex;
 }
 
+.gameName {
+  font-size: 30px;
+  padding: 10px 10px;
+  text-align: left;
+  font-family: var(--font-moderustic);
+  background-color: var(--header-background-color);
+  color: var(--font-color-white);
+} 
+
 .gameRating {
-  background-color: #454749;
+  background-color: var(--header-background-color);
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -126,15 +149,6 @@
   font-weight: bold;
 }
 
-.gameName {
-  font-size: 30px;
-  padding: 10px 10px;
-  text-align: left;
-  font-family: var(--font-moderustic);
-  background-color: #454749;
-  color: var(--font-color-white);
-}
-
 .gameInfo {
   width: 100%;
   height: 100%;
@@ -143,21 +157,8 @@
   color: var(--font-color-white);
   font-family: var(--font-lato);
   padding: 10px 0px 10px 10px;
-  background-color: #3c3d3e;
+  background-color: var(--search-bar-hover-color);
   line-height: 22px;
-}
-
-.gameImage {
-  background-color: #3c3d3e;
-  width: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.gameImage img {
-  height: 98%; 
-  width: 98%;
 }
 
 @media (max-width: 768px) {
