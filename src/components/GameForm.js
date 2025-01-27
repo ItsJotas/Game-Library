@@ -8,8 +8,8 @@ const GameForm = ({ formData, handleChange, handleSubmit }) => {
         <input type="text" name="name" value={formData.name} onChange={handleChange} required />
       </div>
       <div>
-        <label>Story Mode Status: </label>
-        <input type="text" name="storyModeStatusEnum" value={formData.storyModeStatusEnum} onChange={handleChange} required />
+        <label>Campaign Status: </label>
+        <input type="text" name="campaignStatusEnum" value={formData.campaignStatusEnum} onChange={handleChange} required />
       </div>
       <div>
         <label>Multiplayer Status: </label>

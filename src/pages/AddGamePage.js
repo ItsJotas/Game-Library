@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import GameForm from '../components/GameForm';
 
+const backendIP = process.env.REACT_APP_BACKEND_IP;
+const backendPort = process.env.REACT_APP_BACKEND_PORT;
+const apiUrl = `http://${backendIP}:${backendPort}/game`;
+
 const AddGamePage = () => {
   const [formData, setFormData] = useState({
     name: '',
-    storyModeStatusEnum: '',
+    campaignStatusEnum: '',
     multiplayerStatusEnum: '',
     achievementsStatusEnum: '',
     finishDate: '',
@@ -22,7 +26,7 @@ const AddGamePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/game', formData);
+      await axios.post(`${apiUrl}`, formData);
       alert('Game added successfully!');
     } catch (error) {
       console.error(error);
