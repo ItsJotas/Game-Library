@@ -1,8 +1,8 @@
 import React from 'react';
 
-const GameForm = ({ formData, handleChange, handleSubmit }) => {
+const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange }) => {
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '400px', margin: '0 auto' }}>
+    <form onSubmit={handleSubmit} encType="multipart/form-data" style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '400px', margin: '0 auto' }}>
       <div>
         <label>Name: </label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} required />
@@ -34,6 +34,10 @@ const GameForm = ({ formData, handleChange, handleSubmit }) => {
       <div>
         <label>Launcher: </label>
         <input type="text" name="launcher" value={formData.launcher} onChange={handleChange} required />
+      </div>
+      <div>
+        <label>Upload Image:</label>
+        <input type="file" name="image" onChange={handleFileChange} accept="image/*" />
       </div>
       <button type="submit" style={{ padding: '10px 20px', marginTop: '20px' }}>Save</button>
     </form>
