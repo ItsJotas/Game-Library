@@ -8,6 +8,7 @@ const Navbar = () => {
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/add-game">Add Game</a></li>
+        <li><a href="/unrated-games">Rate Games</a></li>
       </ul>
     </div>
   );

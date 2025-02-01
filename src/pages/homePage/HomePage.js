@@ -115,7 +115,7 @@ const HomePage = () => {
       <div style={{ textAlign: 'center'}}>
         <div class="header">
 
-          <h1>Ranking</h1>
+          <h1>Your Ranking</h1>
 
           <div class="searchbarfilter">
             <input

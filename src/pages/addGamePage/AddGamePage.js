@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import GameForm from '../components/GameForm';
+import GameForm from '../../components/GameForm';
 
 const AddGamePage = () => {
   const [formData, setFormData] = useState({
