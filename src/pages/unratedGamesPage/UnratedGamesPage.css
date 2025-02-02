@@ -16,7 +16,7 @@
   transition: margin-left 0.3s ease-in-out;
 }
 
-.header {
+.header-unrated {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -25,12 +25,12 @@
   background-color: var(--header-background-color);
 }
 
-.header h1 {
+.header-unrated h1 {
   color: var(--font-color-white);
   margin: 20px auto;
 }
 
-.searchbarfilter {
+.searchbarfilter-unrated {
   margin-bottom: 20px;
   display: flex;
   width: 80%;
@@ -40,7 +40,7 @@
 }
 
 
-.searchbar {
+.searchbar-unrated {
   padding: 8px;
   font-size: 14px;
   border-radius: 5px;
@@ -53,21 +53,21 @@
   transition-duration: var(--search-bar-duration);
 }
 
-.searchbar::placeholder {
+.searchbar-unrated::placeholder {
   color: var(--font-color-white);
 }
 
-.searchbar:hover {
+.searchbar-unrated:hover {
   background-color: var(--search-bar-hover-color);
 }
 
-.searchbar:focus {
+.searchbar-unrated:focus {
   outline: none;
   background-color: var(--search-bar-hover-color);
   color: var(--font-color-white);
 }
 
-.sortbutton {
+.sortbutton-unrated {
   font-size: 14px;
   padding: 8px;
   font-family: var(--font-moderustic);
@@ -80,8 +80,47 @@
   cursor: pointer;
 }
 
-.sortbutton:hover {
+.sortbutton-unrated:hover {
   background-color: var(--search-bar-hover-color);
+}
+
+.main-unrated {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--search-bar-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardsArea-unrated {
+  width: 90%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 56px; 
+}
+
+.gameCard-unrated {
+  cursor: pointer;
+  width: 180px;
+  height: 300px;
+  position: relative;
+  margin: 0;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3), -1px -1px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.gameCard-unrated:hover {
+  transform: scale(1.1);
+}
+
+.gameCard-unrated img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 
