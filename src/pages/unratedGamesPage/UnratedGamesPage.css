@@ -119,8 +119,10 @@
 
 .gameCard-unrated img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  flex-grow: 1;
+  flex-shrink: 1; 
+  min-height: 0;
+  max-height: 100%;
 }
 
 .gameCardName-unrated {
@@ -128,9 +130,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
-  position: absolute;
-  bottom: 0;
   background-color: rgba(0, 0, 0, 0.9);
   padding: 8px;
 }
