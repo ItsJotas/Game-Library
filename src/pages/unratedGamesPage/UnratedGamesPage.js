@@ -74,6 +74,10 @@ const UnratedGamesPage = () => {
                     src={game.imageUrl}
                     alt={`Cover of ${game.name}`}
                   />
+
+                  <div class="gameCardName-unrated">
+                    <p>{game.name}</p>
+                  </div>
                 </div>  
             ))}
           </div>
