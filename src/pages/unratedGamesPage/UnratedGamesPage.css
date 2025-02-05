@@ -89,6 +89,8 @@
   height: 100vh;
   background-color: var(--search-bar-color);
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   align-items: center;
   justify-content: center;
 }
@@ -139,6 +141,10 @@
   color: var(--font-color-white);
   text-align: center;
   text-transform: uppercase;
+}
+
+.pagination-unrated span{
+  color: var(--font-color-white);
 }
 
 @media (max-width: 768px) {

@@ -6,6 +6,7 @@ import './UnratedGamesPage.css';
 const UnratedGamesPage = () => {
   const [games, setGames] = useState([]);
   const [page, setPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
   const pageSize = 10;
   const [sortDirection, setSortDirection] = useState("asc");
   const [gameName, setGameName] = useState("");
@@ -31,6 +32,7 @@ const UnratedGamesPage = () => {
         },
       });
       setGames(response.data.content);
+      setTotalPages(response.data.totalPages);
     } catch (error) {
       console.error("Failed to fetch Unrated Games", error);
     }
@@ -42,6 +44,18 @@ const UnratedGamesPage = () => {
 
   const handleSearchChange = (event) => {
     setGameName(event.target.value);
+  };
+
+  const nextPage = () => {
+    if (page < totalPages - 1) {
+      setPage(page + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (page > 0) {
+      setPage(page - 1);
+    }
   };
 
   return (
@@ -81,8 +95,19 @@ const UnratedGamesPage = () => {
                 </div>  
             ))}
           </div>
-        </div>
 
+          <div className="pagination-unrated">
+            <button onClick={prevPage} disabled={page === 0}>
+              &#9665;
+            </button>
+            <span>
+              Page {page + 1} / {totalPages}
+            </span>
+            <button onClick={nextPage} disabled={page >= totalPages - 1}>
+              &#9655;
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
