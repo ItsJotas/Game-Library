@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './UnratedGamesPage.css';
+import leftArrow from "./images/left-arrow.png";
+import rightArrow from "./images/right-arrow.png";
 
 const UnratedGamesPage = () => {
   const [games, setGames] = useState([]);
@@ -97,16 +99,25 @@ const UnratedGamesPage = () => {
           </div>
 
           <div className="pagination-unrated">
-            <button onClick={prevPage} disabled={page === 0}>
-              &#9665;
-            </button>
-            <span>
+            <div class="arrows" onClick={prevPage} disabled={page === 0}>
+              <img
+                src={leftArrow}
+                alt="Left Arrow"
+              />
+            </div>
+
+            <p>
               Page {page + 1} / {totalPages}
-            </span>
-            <button onClick={nextPage} disabled={page >= totalPages - 1}>
-              &#9655;
-            </button>
+            </p>
+
+            <div class="arrows" onClick={nextPage} disabled={page === 0} >
+              <img
+                src={rightArrow}
+                alt="Right Arrow"
+              />
+            </div>
           </div>
+          
         </div>
       </div>
     </div>

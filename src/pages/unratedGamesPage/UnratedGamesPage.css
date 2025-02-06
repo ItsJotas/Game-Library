@@ -5,6 +5,8 @@
   --font-color-white: #e7e7e7;
 
   --header-background-color: #18191b;
+  --search-bar-color: #383c42;
+  --search-bar-hover-color: #4e5358;
 
   --font-moderustic: Moderustic;
 }
@@ -143,7 +145,24 @@
   text-transform: uppercase;
 }
 
-.pagination-unrated span{
+.pagination-unrated {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrows {
+  width: 36px;
+  height: 36px;
+}
+
+.arrows img {
+  width: 100%;
+  height: 100%;
+}
+
+.pagination-unrated p{
   color: var(--font-color-white);
 }
 
