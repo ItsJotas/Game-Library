@@ -18,11 +18,7 @@ const UnratedGamesPage = () => {
   const backendPort = process.env.REACT_APP_BACKEND_PORT;
   const apiUrl = `http://${backendIP}:${backendPort}/game`; 
 
-  useEffect(() => {
-    fetchGames();
-  }, [page]);
-
-  const fetchGames = async () => {
+  const fetchGames = useCallback(async () => {
     try {
       const response = await axios.get(`${apiUrl}/unrated-games`, {
         params: {
@@ -38,7 +34,11 @@ const UnratedGamesPage = () => {
     } catch (error) {
       console.error("Failed to fetch Unrated Games", error);
     }
-  };
+  }, [apiUrl, page, pageSize, gameName]);
+
+  useEffect(() => {
+    fetchGames();
+  }, [fetchGames]);
 
   const toggleSortDirection = () => {
     setSortDirection((prevDirection) => (prevDirection === "asc" ? "desc" : "asc"));
@@ -85,7 +85,7 @@ const UnratedGamesPage = () => {
           <div class="cardsArea-unrated">
             {games.map((game, index) => (
             
-                <div class="gameCard-unrated" onClick={() => navigate(`${game.id}/rating`)}>
+                <div class="gameCard-unrated" onClick={() => navigate(`/unrated-games/${game.id}/rating`)}>
                   <img
                     src={game.imageUrl}
                     alt={`Cover of ${game.name}`}

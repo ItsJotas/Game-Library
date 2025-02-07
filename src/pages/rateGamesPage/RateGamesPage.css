@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  --font-color-white: #e7e7e7;
+
+  --header-background-color: #18191b;
+  --search-bar-color: #383c42;
+  --search-bar-hover-color: #4e5358;
+
+  --font-moderustic: Moderustic;
+}
+
+.rategamespage {
+    margin-left: 250px;  
+    height: 100%;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease-in-out;
+  }
