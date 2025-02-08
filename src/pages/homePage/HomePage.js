@@ -165,9 +165,9 @@ const HomePage = () => {
               </div>
             </div>
           ))}
+          {isLoading && <p class="loading">Loading your rated Games...</p>}
+          {!hasMore && <p class="loading">That's all of your rated Games!</p>}
         </div>
-        {isLoading && <p>Carregando...</p>}
-        {!hasMore && <p>Todos os jogos foram carregados!</p>}
       </div>
     </div>
   );
