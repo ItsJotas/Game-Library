@@ -107,7 +107,7 @@ const UnratedGamesPage = () => {
             </div>
 
             <p>
-              Page {page + 1} / {totalPages}
+              Page {totalPages === 0 ? page : page + 1} / {totalPages}
             </p>
 
             <div class="arrows" onClick={nextPage} disabled={page === 0} >

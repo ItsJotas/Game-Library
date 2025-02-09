@@ -99,7 +99,7 @@
 
 .cardsArea-unrated {
   width: 90%;
-  height: 90%;
+  height: 86%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 56px; 
