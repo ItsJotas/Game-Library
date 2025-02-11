@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import GameForm from '../../components/GameForm';
+import './AddGamePage.css';
 
 const AddGamePage = () => {
   const [formData, setFormData] = useState({
@@ -48,8 +49,12 @@ const AddGamePage = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>Add Game</h2>
+    <div class="addgamepage">
+
+      <div class="header-addgamepage">
+        <h1>Add a New Game</h1>
+      </div>
+      
       <GameForm
         formData={formData}
         handleChange={handleChange}
