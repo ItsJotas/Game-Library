@@ -2,7 +2,7 @@ import React from 'react';
 
 const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange }) => {
   return (
-    <form onSubmit={handleSubmit} encType="multipart/form-data" style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '400px', margin: '0 auto' }}>
+    <form onSubmit={handleSubmit} encType="multipart/form-data" class="gameform">
       <div>
         <label>Name: </label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} required />

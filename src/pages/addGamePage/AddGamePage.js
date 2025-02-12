@@ -55,12 +55,14 @@ const AddGamePage = () => {
         <h1>Add a New Game</h1>
       </div>
       
-      <GameForm
-        formData={formData}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        handleFileChange={handleFileChange}
-      />
+      <div class="addgame-main">
+        <GameForm
+          formData={formData}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          handleFileChange={handleFileChange}
+        />
+      </div>  
     </div>
   );
 };

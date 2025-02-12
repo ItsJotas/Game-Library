@@ -30,6 +30,24 @@
     padding: 20px;
 }
 
+.addgame-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--search-bar-color);
+}
+
+.gameform  {
+    display: flex; 
+    flex-direction: row; 
+    gap: 10px;
+    width: 80%;
+    padding-top: 20px; 
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
 @media (max-width: 768px) {
     .addgamepage {
         margin-left: 200px; 
