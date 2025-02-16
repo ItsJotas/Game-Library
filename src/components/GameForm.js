@@ -36,24 +36,56 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
 
       <div>
         <label>Finish Date: </label>
-        <input type="date" name="finishDate" value={formData.finishDate} onChange={handleChange} />
+        <input 
+          type="text" 
+          name="finishDate" 
+          value={formData.finishDate} 
+          onChange={handleChange} 
+          placeholder="dd/mm/aaaa"
+          pattern="\d{2}/\d{2}/\d{4}" 
+          maxLength="10"
+          required
+        />
       </div>
+
       <div>
         <label>100% Completion Date: </label>
-        <input type="date" name="oneHundredPercentDate" value={formData.oneHundredPercentDate} onChange={handleChange} />
+        <input 
+          type="text"  
+          name="oneHundredPercentDate" 
+          value={formData.oneHundredPercentDate} 
+          onChange={handleChange} 
+          placeholder="dd/mm/aaaa"
+          pattern="\d{2}/\d{2}/\d{4}" 
+          maxLength="10"
+          required
+        />
       </div>
+
       <div>
         <label>All Achievements Date: </label>
-        <input type="date" name="allAchievementsDate" value={formData.allAchievementsDate} onChange={handleChange} />
+        <input 
+          type="text"  
+          name="allAchievementsDate" 
+          value={formData.allAchievementsDate} 
+          onChange={handleChange} 
+          placeholder="dd/mm/aaaa"
+          pattern="\d{2}/\d{2}/\d{4}" 
+          maxLength="10"
+          required
+        />
       </div>
+
       <div>
         <label>Launcher: </label>
         <input type="text" name="launcher" value={formData.launcher} onChange={handleChange} required />
       </div>
+
       <div>
         <label>Upload Image:</label>
         <input type="file" name="image" onChange={handleFileChange} accept="image/*" />
       </div>
+
       <button type="submit" style={{ padding: '10px 20px', marginTop: '20px' }}>Save</button>
     </form>
   );

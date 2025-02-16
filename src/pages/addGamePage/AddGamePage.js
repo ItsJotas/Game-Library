@@ -53,13 +53,22 @@ const AddGamePage = () => {
 
   const [image, setImage] = useState(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
   const handleFileChange = (e) => {
     setImage(e.target.files[0]);
+  };
+
+  const formatDate = (value) => {
+    let cleaned = value.replace(/\D/g, "");
+  
+    if (cleaned.length > 2) cleaned = cleaned.replace(/(\d{2})(\d)/, "$1/$2");
+    if (cleaned.length > 5) cleaned = cleaned.replace(/(\d{2})\/(\d{2})(\d)/, "$1/$2/$3");
+  
+    return cleaned.slice(0, 10);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: formatDate(value) });
   };
 
   const handleSubmit = async (e) => {
