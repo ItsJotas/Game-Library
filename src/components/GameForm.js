@@ -1,24 +1,39 @@
 import React from 'react';
 
-const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange }) => {
+const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, campaignStatuses, multiplayerStatuses, 
+  achievementsStatuses, SelectField }) => {
+
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data" class="gameform">
       <div>
         <label>Name: </label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} required />
       </div>
-      <div>
-        <label>Campaign Status: </label>
-        <input type="text" name="campaignStatusEnum" value={formData.campaignStatusEnum} onChange={handleChange} required />
-      </div>
-      <div>
-        <label>Multiplayer Status: </label>
-        <input type="text" name="multiplayerStatusEnum" value={formData.multiplayerStatusEnum} onChange={handleChange} required />
-      </div>
-      <div>
-        <label>Achievements Status: </label>
-        <input type="text" name="achievementsStatusEnum" value={formData.achievementsStatusEnum} onChange={handleChange} required />
-      </div>
+
+      <SelectField 
+        label="Campaign Status" 
+        name="campaignStatusEnum" 
+        options={campaignStatuses} 
+        value={formData.campaignStatusEnum} 
+        onChange={handleChange} 
+      />
+
+      <SelectField 
+        label="Multiplayer Status" 
+        name="multiplayerStatusEnum" 
+        options={multiplayerStatuses} 
+        value={formData.multiplayerStatusEnum} 
+        onChange={handleChange} 
+      />
+
+      <SelectField 
+        label="Achievements Status" 
+        name="achievementsStatusEnum" 
+        options={achievementsStatuses} 
+        value={formData.achievementsStatusEnum} 
+        onChange={handleChange} 
+      />
+
       <div>
         <label>Finish Date: </label>
         <input type="date" name="finishDate" value={formData.finishDate} onChange={handleChange} />

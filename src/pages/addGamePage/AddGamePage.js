@@ -14,6 +14,43 @@ const AddGamePage = () => {
     allAchievementsDate: '',
     launcher: '',
   });
+
+  const campaignStatuses = [
+    { value: "NO_CAMPAIGN", label: "The Game doesn't have Campaign." },
+    { value: "NOT_FINISHED", label: "The Player has not finished the Campaign." },
+    { value: "FINISHED", label: "The Player has finished the Campaign." },
+    { value: "ONE_HUNDRED_PERCENT", label: "The Player got 100% in the Campaign." },
+    { value: "NOT_PLAYED", label: "The Game has a Campaign but the Player hasn't played it." },
+    { value: "JUST_LORE", label: "The Game doesn't have a Story Mode, but has Lore." }
+  ];
+  
+  const multiplayerStatuses = [
+    { value: "NO_MULTIPLAYER", label: "The Game doesn't have Multiplayer." },
+    { value: "HAS_MULTIPLAYER", label: "The Game has Multiplayer." },
+    { value: "COMPETITIVE", label: "The Game is Multiplayer Competitive." },
+    { value: "COOP_STORY_MODE", label: "The Game has COOP Story Mode." },
+    { value: "NOT_PLAYED", label: "The Game has Multiplayer but the Player hasn't played it." }
+  ];
+
+  const achievementsStatuses = [
+    { value: "NO_ACHIEVEMENTS", label: "The Game doesn't have Achievements." },
+    { value: "PLAYER_HAS_NO_ACHIEVEMENTS", label: "The Player doesn't have any Achievements." },
+    { value: "PLAYER_HAS_SOME_ACHIEVEMENTS", label: "The Player has some Achievements." },
+    { value: "ALL_ACHIEVEMENTS", label: "The Player got all Achievements." }
+  ]
+
+  const SelectField = ({ label, name, options, value, onChange }) => (
+    <div>
+      <label htmlFor={name}>{label}: </label>
+      <select name={name} value={value} onChange={onChange} required>
+        <option value="">Select a status</option>
+        {options.map(option => (
+          <option key={option.value} value={option.value}>{option.label}</option>
+        ))}
+      </select>
+    </div>
+  );
+
   const [image, setImage] = useState(null);
 
   const handleChange = (e) => {
@@ -61,6 +98,10 @@ const AddGamePage = () => {
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           handleFileChange={handleFileChange}
+          campaignStatuses={campaignStatuses}
+          multiplayerStatuses={multiplayerStatuses}
+          achievementsStatuses={achievementsStatuses}
+          SelectField={SelectField}
         />
       </div>  
     </div>
