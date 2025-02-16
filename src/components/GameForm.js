@@ -55,7 +55,7 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
           name="oneHundredPercentDate" 
           value={formData.oneHundredPercentDate} 
           onChange={handleChange} 
-          placeholder="dd/mm/aaaa"
+          placeholder="dd/mm/yyyy"
           pattern="\d{2}/\d{2}/\d{4}" 
           maxLength="10"
           required
@@ -69,7 +69,7 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
           name="allAchievementsDate" 
           value={formData.allAchievementsDate} 
           onChange={handleChange} 
-          placeholder="dd/mm/aaaa"
+          placeholder="dd/mm/yyyy"
           pattern="\d{2}/\d{2}/\d{4}" 
           maxLength="10"
           required
