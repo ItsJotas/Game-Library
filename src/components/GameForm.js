@@ -5,8 +5,8 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
 
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data" class="gameform">
-      <div>
-        <label>Name: </label>
+      <div class="gameform-inputs">
+        <label class="gameform-text">Name: </label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} required />
       </div>
 
@@ -34,8 +34,8 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
         onChange={handleChange} 
       />
 
-      <div>
-        <label>Finish Date: </label>
+      <div class="gameform-inputs">
+        <label class="gameform-text">Finish Date: </label>
         <input 
           type="text" 
           name="finishDate" 
@@ -48,8 +48,8 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
         />
       </div>
 
-      <div>
-        <label>100% Completion Date: </label>
+      <div class="gameform-inputs">
+        <label class="gameform-text">100% Completion Date: </label>
         <input 
           type="text"  
           name="oneHundredPercentDate" 
@@ -62,8 +62,8 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
         />
       </div>
 
-      <div>
-        <label>All Achievements Date: </label>
+      <div class="gameform-inputs">
+        <label class="gameform-text">All Achievements Date: </label>
         <input 
           type="text"  
           name="allAchievementsDate" 
@@ -76,13 +76,13 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
         />
       </div>
 
-      <div>
-        <label>Launcher: </label>
+      <div class="gameform-inputs">
+        <label class="gameform-text">Launcher: </label>
         <input type="text" name="launcher" value={formData.launcher} onChange={handleChange} required />
       </div>
 
-      <div>
-        <label>Upload Image:</label>
+      <div class="gameform-inputs">
+        <label class="gameform-text">Upload Image:</label>
         <input type="file" name="image" onChange={handleFileChange} accept="image/*" />
       </div>
 

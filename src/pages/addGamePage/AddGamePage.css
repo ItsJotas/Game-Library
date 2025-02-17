@@ -37,15 +37,25 @@
     background-color: var(--search-bar-color);
 }
 
-.gameform  {
+.gameform {
     display: flex; 
-    flex-direction: row; 
-    gap: 10px;
+    flex-direction: column; 
+    gap: 20px;
     width: 80%;
     padding-top: 20px; 
     align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
+}
+
+.gameform-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.gameform-text {
+    color: var(--font-color-white);
+    font-family: var(--font-moderustic);
 }
 
 @media (max-width: 768px) {
