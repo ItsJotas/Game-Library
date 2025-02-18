@@ -4,6 +4,7 @@
     --font-color-white: #e7e7e7;
 
     --header-background-color: #18191b;
+    --input-hover-color: #232528;
 
     --font-moderustic: Moderustic;
 }
@@ -51,11 +52,42 @@
 .gameform-inputs {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .gameform-text {
     color: var(--font-color-white);
     font-family: var(--font-moderustic);
+    font-size: 18px;
+}
+
+.namecampaignstatus {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+}
+
+.gameform-textinput {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: var(--header-background-color);
+    border: 0px;
+    margin: 0 auto;
+    flex-grow: 1;
+    font-family: var(--font-moderustic);
+    transition-property: background-color;
+    transition-duration: var(--search-bar-duration);
+}
+  
+.gameform-textinput:hover {
+    background-color: var(--input-hover-color);
+}
+
+.gameform-textinput:focus {
+    outline: none;
+    background-color: var(--input-hover-color);
+    color: var(--font-color-white);
 }
 
 @media (max-width: 768px) {

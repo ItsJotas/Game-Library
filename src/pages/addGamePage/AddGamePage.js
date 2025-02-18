@@ -40,7 +40,7 @@ const AddGamePage = () => {
   ]
 
   const SelectField = ({ label, name, options, value, onChange }) => (
-    <div>
+    <div class="gameform-inputs">
       <label class="gameform-text" htmlFor={name}>{label}: </label>
       <select name={name} value={value} onChange={onChange} required>
         <option value="">Select a status</option>
@@ -68,7 +68,12 @@ const AddGamePage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: formatDate(value) });
+  
+    const formattedValue = ["finishDate", "oneHundredPercentDate", "allAchievementsDate"].includes(name)
+      ? formatDate(value)
+      : value;
+  
+    setFormData({ ...formData, [name]: formattedValue });
   };
 
   const handleSubmit = async (e) => {

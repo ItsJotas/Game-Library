@@ -5,18 +5,21 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
 
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data" class="gameform">
-      <div class="gameform-inputs">
-        <label class="gameform-text">Name: </label>
-        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-      </div>
 
-      <SelectField 
-        label="Campaign Status" 
-        name="campaignStatusEnum" 
-        options={campaignStatuses} 
-        value={formData.campaignStatusEnum} 
-        onChange={handleChange} 
-      />
+      <div class="namecampaignstatus">
+        <div class="gameform-inputs">
+          <label class="gameform-text">Name: </label>
+          <input class="gameform-textinput" type="text" name="name" value={formData.name} onChange={handleChange} required/>
+        </div>
+
+        <SelectField 
+          label="Campaign Status" 
+          name="campaignStatusEnum" 
+          options={campaignStatuses} 
+          value={formData.campaignStatusEnum} 
+          onChange={handleChange} 
+        />
+      </div>
 
       <SelectField 
         label="Multiplayer Status" 
