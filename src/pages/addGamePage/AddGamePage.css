@@ -49,7 +49,21 @@
     flex-wrap: wrap;
 }
 
+.namecampaignstatus {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+    width: 100%;
+}
+
 .gameform-inputs {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+}
+
+.gameform-selects {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -61,12 +75,6 @@
     font-size: 18px;
 }
 
-.namecampaignstatus {
-    display: flex;
-    flex-direction: row;
-    gap: 36px;
-}
-
 .gameform-textinput {
     padding: 8px;
     font-size: 14px;
@@ -74,7 +82,7 @@
     background-color: var(--header-background-color);
     border: 0px;
     margin: 0 auto;
-    flex-grow: 1;
+    width: 100%;
     font-family: var(--font-moderustic);
     transition-property: background-color;
     transition-duration: var(--search-bar-duration);
