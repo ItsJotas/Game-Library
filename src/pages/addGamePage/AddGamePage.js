@@ -42,7 +42,7 @@ const AddGamePage = () => {
   const SelectField = ({ label, name, options, value, onChange }) => (
     <div class="gameform-selects">
       <label class="gameform-text" htmlFor={name}>{label}: </label>
-      <select name={name} value={value} onChange={onChange} required>
+      <select name={name} value={value} onChange={onChange} required class="campaignselect">
         <option value="">Select a status</option>
         {options.map(option => (
           <option key={option.value} value={option.value}>{option.label}</option>

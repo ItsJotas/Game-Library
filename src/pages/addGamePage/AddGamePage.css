@@ -63,6 +63,20 @@
     gap: 8px;
 }
 
+.campaignselect {
+    appearance: none;
+    background-color: white;
+    border: 2px solid #4CAF50;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    color: var(--font-color-white);
+    font-family: var(--font-moderustic);
+    border: 0px;
+    cursor: pointer;
+    background-color: var(--header-background-color);
+}
+
 .gameform-selects {
     display: flex;
     flex-direction: column;
@@ -83,6 +97,7 @@
     border: 0px;
     margin: 0 auto;
     width: 100%;
+    color: var(--font-color-white);
     font-family: var(--font-moderustic);
     transition-property: background-color;
     transition-duration: var(--search-bar-duration);

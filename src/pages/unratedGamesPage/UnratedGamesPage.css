@@ -40,7 +40,6 @@
   gap: 20px;
 }
 
-
 .searchbar-unrated {
   padding: 8px;
   font-size: 14px;
@@ -50,6 +49,7 @@
   margin: 0 auto;
   font-family: var(--font-moderustic);
   flex-grow: 1;
+  color: var(--font-color-white);
   transition-property: background-color;
   transition-duration: var(--search-bar-duration);
 }
