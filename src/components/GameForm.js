@@ -21,39 +21,42 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
         />
       </div>
 
-      <SelectField 
-        label="Multiplayer Status" 
-        name="multiplayerStatusEnum" 
-        options={multiplayerStatuses} 
-        value={formData.multiplayerStatusEnum} 
-        onChange={handleChange} 
-      />
-
-      <SelectField 
-        label="Achievements Status" 
-        name="achievementsStatusEnum" 
-        options={achievementsStatuses} 
-        value={formData.achievementsStatusEnum} 
-        onChange={handleChange} 
-      />
-
-      <div class="gameform-inputs">
-        <label class="gameform-text">Finish Date: </label>
-        <input 
-          type="text" 
-          name="finishDate" 
-          value={formData.finishDate} 
+      <div class="namecampaignstatus">
+        <SelectField 
+          label="Multiplayer Status" 
+          name="multiplayerStatusEnum" 
+          options={multiplayerStatuses} 
+          value={formData.multiplayerStatusEnum} 
           onChange={handleChange} 
-          placeholder="dd/mm/aaaa"
-          pattern="\d{2}/\d{2}/\d{4}" 
-          maxLength="10"
-          required
         />
+
+        <SelectField 
+          label="Achievements Status" 
+          name="achievementsStatusEnum" 
+          options={achievementsStatuses} 
+          value={formData.achievementsStatusEnum} 
+          onChange={handleChange} 
+        />
+
+        <div class="gameform-inputs">
+          <label class="gameform-text">Finish Date: </label>
+          <input class="gameform-textinput"
+            type="text" 
+            name="finishDate" 
+            value={formData.finishDate} 
+            onChange={handleChange} 
+            placeholder="dd/mm/aaaa"
+            pattern="\d{2}/\d{2}/\d{4}" 
+            maxLength="10"
+            required
+          />
+        </div>
+
       </div>
 
       <div class="gameform-inputs">
         <label class="gameform-text">100% Completion Date: </label>
-        <input 
+        <input class="gameform-textinput"
           type="text"  
           name="oneHundredPercentDate" 
           value={formData.oneHundredPercentDate} 
@@ -67,7 +70,7 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
 
       <div class="gameform-inputs">
         <label class="gameform-text">All Achievements Date: </label>
-        <input 
+        <input class="gameform-textinput"
           type="text"  
           name="allAchievementsDate" 
           value={formData.allAchievementsDate} 
@@ -81,7 +84,7 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
 
       <div class="gameform-inputs">
         <label class="gameform-text">Launcher: </label>
-        <input type="text" name="launcher" value={formData.launcher} onChange={handleChange} required />
+        <input class="gameform-textinput" type="text" name="launcher" value={formData.launcher} onChange={handleChange} required />
       </div>
 
       <div class="gameform-inputs">
