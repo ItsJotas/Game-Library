@@ -39,53 +39,57 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
         />
 
         <div class="gameform-inputs">
+          <label class="gameform-text">Launcher: </label>
+          <input class="gameform-textinput" type="text" name="launcher" value={formData.launcher} onChange={handleChange} required />
+        </div>
+      </div>
+
+      <div class="namecampaignstatus gameform-dates">
+        <div class="gameform-inputs">
           <label class="gameform-text">Finish Date: </label>
-          <input class="gameform-textinput"
+          <input class="gameform-textinput gameform-dateinput"
             type="text" 
             name="finishDate" 
             value={formData.finishDate} 
             onChange={handleChange} 
-            placeholder="dd/mm/aaaa"
+            placeholder="dd/mm/yyyy"
             pattern="\d{2}/\d{2}/\d{4}" 
             maxLength="10"
             required
           />
         </div>
 
-      </div>
+        <div class="gameform-inputs" >
+          <label class="gameform-text">100% Completion Date: </label>
+          <input class="gameform-textinput gameform-dateinput"
+            type="text"  
+            name="oneHundredPercentDate" 
+            value={formData.oneHundredPercentDate} 
+            onChange={handleChange} 
+            placeholder="dd/mm/yyyy"
+            pattern="\d{2}/\d{2}/\d{4}" 
+            maxLength="10"
+            required
+          />
+        </div>
 
-      <div class="gameform-inputs">
-        <label class="gameform-text">100% Completion Date: </label>
-        <input class="gameform-textinput"
-          type="text"  
-          name="oneHundredPercentDate" 
-          value={formData.oneHundredPercentDate} 
-          onChange={handleChange} 
-          placeholder="dd/mm/yyyy"
-          pattern="\d{2}/\d{2}/\d{4}" 
-          maxLength="10"
-          required
-        />
-      </div>
+        <div class="gameform-inputs">
+          <label class="gameform-text">All Achievements Date: </label>
+          <input class="gameform-textinput gameform-dateinput" 
+            type="text"  
+            name="allAchievementsDate" 
+            value={formData.allAchievementsDate} 
+            onChange={handleChange} 
+            placeholder="dd/mm/yyyy"
+            pattern="\d{2}/\d{2}/\d{4}" 
+            maxLength="10"
+            required
+          />
+        </div>
 
-      <div class="gameform-inputs">
-        <label class="gameform-text">All Achievements Date: </label>
-        <input class="gameform-textinput"
-          type="text"  
-          name="allAchievementsDate" 
-          value={formData.allAchievementsDate} 
-          onChange={handleChange} 
-          placeholder="dd/mm/yyyy"
-          pattern="\d{2}/\d{2}/\d{4}" 
-          maxLength="10"
-          required
-        />
+        
       </div>
-
-      <div class="gameform-inputs">
-        <label class="gameform-text">Launcher: </label>
-        <input class="gameform-textinput" type="text" name="launcher" value={formData.launcher} onChange={handleChange} required />
-      </div>
+      
 
       <div class="gameform-inputs">
         <label class="gameform-text">Upload Image:</label>
