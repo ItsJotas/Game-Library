@@ -6,6 +6,8 @@
 
     --header-background-color: #18191b;
     --input-hover-color: #232528;
+    --color-button-blue: #007bff;
+    --color-button-blue-hover: #0056b3;
 
     --font-moderustic: Moderustic;
 }
@@ -122,7 +124,41 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 40%;
+}
+
+.datesimage {
+    display: flex;
     width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.uploadbutton {
+    display: none;
+}
+
+.uploadlabel {
+    display: inline-block;
+    background-color: var(--color-button-blue);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-family: var(--font-moderustic);
+}
+
+.uploadlabel:hover {
+    background-color: var(--color-button-blue-hover);
+}
+
+.gameform-uploadimage {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 @media (max-width: 768px) {
