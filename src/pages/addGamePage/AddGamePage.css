@@ -157,8 +157,24 @@
 
 .gameform-uploadimage {
     display: flex;
+    gap: 16px;
+    width: 32%;
+}
+
+.gameform-uploadbutton-container {
+    display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.gameform-imagecontainer {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.gameform-imagepreview {
+    width: 90%;
 }
 
 @media (max-width: 768px) {

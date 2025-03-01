@@ -52,9 +52,27 @@ const AddGamePage = () => {
   );
 
   const [image, setImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
 
   const handleFileChange = (e) => {
-    setImage(e.target.files[0]);
+    const file = e.target.files[0];
+    setImage(file);
+  
+    if (file) {
+      const previewURL = URL.createObjectURL(file);
+      setImagePreview(previewURL);
+    } else {
+      setImagePreview(null);
+    }
+  };
+
+  const convertToISODate = (date) => {
+    if (!date) return '';
+    const parts = date.split('/');
+    if (parts.length === 3) {
+      return `${parts[2]}-${parts[1]}-${parts[0]}`;
+    }
+    return date;
   };
 
   const formatDate = (value) => {
@@ -78,14 +96,20 @@ const AddGamePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     const formDataToSend = new FormData();
     Object.keys(formData).forEach((key) => {
-      formDataToSend.append(key, formData[key]);
+      let value = formData[key];
+      if (["finishDate", "oneHundredPercentDate", "allAchievementsDate"].includes(key)) {
+        value = convertToISODate(value);
+      }
+      formDataToSend.append(key, value);
     });
+  
     if (image) {
       formDataToSend.append('image', image);
     }
-
+  
     try {
       await axios.post('http://localhost:8080/game', formDataToSend, {
         headers: {
@@ -116,6 +140,8 @@ const AddGamePage = () => {
           multiplayerStatuses={multiplayerStatuses}
           achievementsStatuses={achievementsStatuses}
           SelectField={SelectField}
+          image={image}
+          imagePreview={imagePreview}
         />
       </div>  
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, campaignStatuses, multiplayerStatuses, 
-  achievementsStatuses, SelectField }) => {
+  achievementsStatuses, SelectField, image, imagePreview }) => {
 
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data" class="gameform">
@@ -56,7 +56,6 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
               placeholder="dd/mm/yyyy"
               pattern="\d{2}/\d{2}/\d{4}" 
               maxLength="10"
-              required
             />
           </div>
 
@@ -70,7 +69,6 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
               placeholder="dd/mm/yyyy"
               pattern="\d{2}/\d{2}/\d{4}" 
               maxLength="10"
-              required
             />
           </div>
 
@@ -84,15 +82,21 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
               placeholder="dd/mm/yyyy"
               pattern="\d{2}/\d{2}/\d{4}" 
               maxLength="10"
-              required
             />
           </div> 
         </div>
 
         <div class="gameform-uploadimage">
-          <label class="gameform-text">Upload Image:</label>
-          <input class="uploadbutton" type="file" onChange={handleFileChange} accept="image/*" id="imageInput"/>
-          <label htmlFor="imageInput" className="uploadlabel">Choose an Image</label>
+          <div className='gameform-uploadbutton-container'>
+            <label class="gameform-text">Upload Image:</label>
+            <input class="uploadbutton" type="file" onChange={handleFileChange} accept="image/*" id="imageInput"/>
+            <label htmlFor="imageInput" className="uploadlabel">Choose an Image</label>
+          </div>
+
+          <div class="gameform-imagecontainer">
+            {imagePreview && (<img src={imagePreview} alt="Game Preview" className="gameform-imagepreview"/>)}
+            {image && <p className="selectedfile">{image.name}</p>}
+          </div>   
         </div>
       </div>
 
