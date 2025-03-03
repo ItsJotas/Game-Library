@@ -4,6 +4,10 @@ import GameForm from '../../components/GameForm';
 import './AddGamePage.css';
 
 const AddGamePage = () => {
+  const backendIP = process.env.REACT_APP_BACKEND_IP;
+  const backendPort = process.env.REACT_APP_BACKEND_PORT;
+  const apiUrl = `http://${backendIP}:${backendPort}/game`
+
   const [formData, setFormData] = useState({
     name: '',
     storyModeStatusEnum: '',
@@ -111,7 +115,7 @@ const AddGamePage = () => {
     }
   
     try {
-      await axios.post('http://localhost:8080/game', formDataToSend, {
+      await axios.post(`${apiUrl}`, formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
