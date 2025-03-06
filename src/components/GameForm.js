@@ -91,12 +91,10 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
             <label class="gameform-text">Upload Image:</label>
             <input class="uploadbutton" type="file" onChange={handleFileChange} accept="image/*" id="imageInput"/>
             <label htmlFor="imageInput" className="uploadlabel">Choose an Image</label>
-          </div>
-
-          <div class="gameform-imagecontainer">
-            {imagePreview && (<img src={imagePreview} alt="Game Preview" className="gameform-imagepreview"/>)}
-            {image && <p className="selectedfile">{image.name}</p>}
-          </div>   
+            <div class="gameform-imagecontainer">
+              {imagePreview && (<img src={imagePreview} alt="Game Preview" className="gameform-imagepreview"/>)}
+            </div>
+          </div>  
         </div>
       </div>
 

@@ -140,7 +140,7 @@
 
 .uploadlabel {
     display: inline-block;
-    background-color: var(--color-button-blue);
+    background-color: var(--header-background-color);
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -152,29 +152,35 @@
 }
 
 .uploadlabel:hover {
-    background-color: var(--color-button-blue-hover);
+    background-color: var(--input-hover-color);
 }
 
 .gameform-uploadimage {
     display: flex;
     gap: 16px;
-    width: 32%;
+    width: 22%;
 }
 
 .gameform-uploadbutton-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: 100%;
+    justify-content: center;
 }
 
 .gameform-imagecontainer {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 100%;
+    align-items: center;
 }
 
 .gameform-imagepreview {
-    width: 90%;
+    width: 44%;
+    border: solid 2px white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3), -1px -1px 5px rgba(0, 0, 0, 0.3);
+
 }
 
 @media (max-width: 768px) {
