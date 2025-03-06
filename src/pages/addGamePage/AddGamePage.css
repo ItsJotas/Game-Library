@@ -180,7 +180,27 @@
     width: 44%;
     border: solid 2px white;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3), -1px -1px 5px rgba(0, 0, 0, 0.3);
+}
 
+.addgamebutton-container {
+    margin-top: 20px;
+}
+
+.addgamebutton {
+    font-size: 16px;
+    padding: 8px 26px;
+    font-family: var(--font-moderustic);
+    border-radius: 5px;
+    background-color: var(--color-button-blue);
+    color: var(--font-color-white);
+    border: 0px;
+    transition-property: background-color;
+    transition-duration: var(--search-bar-duration);
+    cursor: pointer;
+}
+
+.addgamebutton:hover {
+    background-color: var(--color-button-blue-hover);
 }
 
 @media (max-width: 768px) {

@@ -98,7 +98,9 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
         </div>
       </div>
 
-      <button type="submit" style={{ padding: '10px 20px', marginTop: '20px' }}>Save</button>
+      <div class="addgamebutton-container">
+        <button type="submit" class="addgamebutton">Save Game</button>
+      </div>
     </form>
   );
 };
