@@ -41,7 +41,7 @@ const HomePage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `${apiUrl}?pageNumber=${pageNumber}&pageSize=20&orderBy=${sortDirection}&gameName=${query}`
+        `${apiUrl}/rated-games?pageNumber=${pageNumber}&pageSize=20&orderBy=${sortDirection}&gameName=${query}`
       );
       const data = await response.json();
       if (data.content && data.content.length > 0) {
