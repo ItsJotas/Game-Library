@@ -24,7 +24,7 @@ const UnratedGamesPage = () => {
         params: {
           pageNumber: page,
           pageSize: pageSize,
-          orderBy: "asc",
+          orderBy: sortDirection,
           sortBy: "name",
           gameName: gameName || undefined,
         },
@@ -34,7 +34,7 @@ const UnratedGamesPage = () => {
     } catch (error) {
       console.error("Failed to fetch Unrated Games", error);
     }
-  }, [apiUrl, page, pageSize, gameName]);
+  }, [apiUrl, page, pageSize, gameName, sortDirection]);
 
   useEffect(() => {
     fetchGames();
