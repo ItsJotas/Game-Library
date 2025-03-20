@@ -34,10 +34,23 @@
 
 .rategames-main {
   display: flex;
-  flex-direction: column;
   background-color: var(--search-bar-color);
   width: 100%;
   height: 100vh;
+  justify-content: center;
+}
+
+.rategames-form-container {
+  margin-top: 20px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rategames-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 @media (max-width: 768px) {

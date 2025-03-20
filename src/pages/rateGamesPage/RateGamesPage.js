@@ -56,26 +56,30 @@ const RateGamesPage = () => {
       </div>
       
       <div class="rategames-main">
-        <form onSubmit={handleSubmit}>
-          {Object.keys(ratings).map((field) => (
-            <div key={field}>
-              <label>{field.charAt(0).toUpperCase() + field.slice(1)}:</label>
-              <input
-                type="number"
-                name={field}
-                value={ratings[field]}
-                onChange={handleChange}
-                min="0"
-                max="10"
-                step="0.1"
-                required={!["story", "matchMaking", "competitiveBalance", "coop"].includes(field)}
-              />
-            </div>
-          ))}
-        </form>
 
-        <button type="submit">Submit Rating</button>
-        <button onClick={() => navigate(-1)}>Back</button>  
+        <div class="rategames-form-container">
+          <form onSubmit={handleSubmit} class="rategames-form">
+            {Object.keys(ratings).map((field) => (
+              <div key={field} class="">
+                <label>{field.charAt(0).toUpperCase() + field.slice(1)}:</label>
+                <input
+                  type="number"
+                  name={field}
+                  value={ratings[field]}
+                  onChange={handleChange}
+                  min="0"
+                  max="10"
+                  step="0.1"
+                  required={!["story", "matchMaking", "competitiveBalance", "coop"].includes(field)}
+                />
+              </div>
+            ))}
+          </form>
+
+          <button type="submit">Submit Rating</button>
+          <button onClick={() => navigate(-1)}>Back</button>  
+        </div>
+       
       </div>
     </div>
   );
