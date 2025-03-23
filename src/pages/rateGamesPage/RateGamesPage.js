@@ -60,9 +60,10 @@ const RateGamesPage = () => {
         <div class="rategames-form-container">
           <form onSubmit={handleSubmit} class="rategames-form">
             {Object.keys(ratings).map((field) => (
-              <div key={field} class="">
-                <label>{field.charAt(0).toUpperCase() + field.slice(1)}:</label>
+              <div key={field} class="rategames-input-container">
+                <label class="rategames-input-text">{field.charAt(0).toUpperCase() + field.slice(1)}:</label>
                 <input
+                  class="rategames-input"
                   type="number"
                   name={field}
                   value={ratings[field]}

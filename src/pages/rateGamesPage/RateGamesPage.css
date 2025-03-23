@@ -45,12 +45,50 @@
   width: 90%;
   display: flex;
   flex-direction: column;
+  gap: 26px;
 }
 
 .rategames-form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+}
+
+.rategames-input-container {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.rategames-input-text {
+  color: var(--font-color-white);
+  font-family: var(--font-moderustic);
+  align-self: center;
+}
+
+.rategames-input {
+  min-width: 50px;
+  width: 6%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: var(--header-background-color);
+  border: 0px;
+  margin: 0 0;
+  color: var(--font-color-white);
+  font-family: var(--font-moderustic);
+  transition-property: background-color;
+  transition-duration: var(--search-bar-duration);
+}
+
+.rategames-input:hover {
+  background-color: var(--input-hover-color);
+}
+
+.rategames-input:focus {
+  outline: none;
+  background-color: var(--input-hover-color);
+  color: var(--font-color-white);
 }
 
 @media (max-width: 768px) {
