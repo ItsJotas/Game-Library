@@ -57,7 +57,6 @@ const RateGamesPage = () => {
       </div>
       
       <div class="rategames-main">
-
         <div class="rategames-form-container">
 
           <BackButton />
@@ -88,7 +87,9 @@ const RateGamesPage = () => {
             })}
           </form>
 
-          <button type="submit">Submit Rating</button>  
+          <div class="submit-rating-button-container">
+            <button type="submit" class="submit-rating-button">Submit Rating</button>
+          </div>  
         </div>
        
       </div>
