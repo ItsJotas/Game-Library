@@ -1,0 +1,18 @@
+.return-arrow-container {
+    cursor: pointer;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.return-arrow-container p {
+    font-family: var(--font-latto);
+    font-weight: bold;
+    color: var(--header-background-color);
+    font-size: 16px;
+}
+
+.return-arrow {
+    width: 26px;
+    height: 26px;  
+}
