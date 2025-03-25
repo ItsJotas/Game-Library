@@ -1,18 +1,24 @@
 .return-arrow-container {
+    min-width: 20%;
+}
+
+.return-arrow {
     cursor: pointer;
     display: flex;
     gap: 6px;
     align-items: center;
+    width: 80px;
 }
 
-.return-arrow-container p {
+.return-arrow p {
     font-family: var(--font-latto);
     font-weight: bold;
     color: var(--header-background-color);
     font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.return-arrow {
+.return-arrow img{
     width: 26px;
     height: 26px;  
 }

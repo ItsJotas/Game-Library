@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./RateGamesPage.css";
@@ -8,7 +8,7 @@ const RateGamesPage = () => {
   const { gameId } = useParams();
   const navigate = useNavigate();
 
-  console.log("Game ID from URL:", gameId);
+  const [gameName, setGameName] = useState(""); 
 
   const [ratings, setRatings] = useState({
     gameplay: "",
@@ -26,6 +26,19 @@ const RateGamesPage = () => {
   const backendIP = process.env.REACT_APP_BACKEND_IP;
   const backendPort = process.env.REACT_APP_BACKEND_PORT;
   const apiUrl = `http://${backendIP}:${backendPort}/game/unrated-games/${gameId}/rating`;
+  const gameInfoUrl = `http://${backendIP}:${backendPort}/game/${gameId}`;
+
+  useEffect(() => {
+    const fetchGameName = async () => {
+      try {
+        const response = await axios.get(gameInfoUrl);
+        setGameName(response.data.name);
+      } catch (error) {
+        console.error("Failed to fetch game name", error);
+      }
+    };
+    fetchGameName();
+  }, [gameId, gameInfoUrl]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -59,7 +72,11 @@ const RateGamesPage = () => {
       <div class="rategames-main">
         <div class="rategames-form-container">
 
-          <BackButton />
+          <div class="rate-games-title">
+            <BackButton />
+            {gameName && <h2 className="ratepage-game-name">{gameName}</h2>}
+          </div>
+          
 
           <form onSubmit={handleSubmit} className="rategames-form">
             {Object.keys(ratings).map((field) => {

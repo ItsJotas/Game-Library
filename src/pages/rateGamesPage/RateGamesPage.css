@@ -117,6 +117,19 @@
   background-color: var(--color-button-blue-hover);
 }
 
+.rate-games-title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.ratepage-game-name {
+  text-align: center;
+  width: 60%;
+  color: var(--header-background-color);
+  font-size: 26px;
+}
+
 @media (max-width: 768px) {
   .rategamespage {
     margin-left: 200px; 

@@ -6,14 +6,16 @@ const BackButton = () => {
   const navigate = useNavigate();
 
   return (
-    <div class="return-arrow-container" onClick={() => navigate(-1)}>
-      <img
-        class="return-arrow"    
-        src={returnButton}
-        alt="Return Arrow"
-      />
-      <p>BACK</p>
+    <div class="return-arrow-container">
+      <div class="return-arrow" onClick={() => navigate(-1)}>
+        <img
+          src={returnButton}
+          alt="Return Arrow"
+        />
+        <p>BACK</p>
+      </div>
     </div>
+    
   );
 };
 
