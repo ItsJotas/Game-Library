@@ -48,10 +48,23 @@
   gap: 26px;
 }
 
+.form-chart-container {
+  width: 100%;
+  display: flex;
+}
+
+.rategames-chart-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .rategames-form {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 50%;
 }
 
 .rategames-input-container {
@@ -70,7 +83,7 @@
 
 .rategames-input {
   min-width: 50px;
-  width: 6%;
+  width: 12%;
   padding: 8px;
   font-size: 14px;
   border-radius: 5px;
