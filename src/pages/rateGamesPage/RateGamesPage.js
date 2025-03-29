@@ -107,13 +107,12 @@ const RateGamesPage = () => {
 
             <div class="rategames-chart-container">
                 <RateGamesChart average={9.7} />
-            </div>
-          </div>
-          
 
-          <div class="submit-rating-button-container">
-            <button type="submit" class="submit-rating-button">Submit Rating</button>
-          </div>  
+                <div class="submit-rating-button-container">
+                  <button type="submit" class="submit-rating-button">Submit Rating</button>
+                </div> 
+            </div>
+          </div>   
         </div>
        
       </div>

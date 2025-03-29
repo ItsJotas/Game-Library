@@ -1,4 +1,9 @@
 .rate-games-chart-value {
-    font-size: 68px;
+    font-size: 400%;
+    font-family: 'Roboto';
+}
+
+.rate-games-chart-text {
+    font-size: 180%;
     font-family: 'Roboto';
 }

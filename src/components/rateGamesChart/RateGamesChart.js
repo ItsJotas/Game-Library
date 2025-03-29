@@ -25,7 +25,23 @@ const getColorForMaxValue = (value) => {
   } else {
     return '#e65218'
   }
-} 
+}
+
+const getGameQuality = (value) => {
+  if(value < 5) {
+    return "Bad"
+  } else if (value >= 5 && value < 7) {
+    return "Common";
+  } else if (value >= 7 && value < 8) {
+    return "Good";
+  } else if (value >= 8 && value < 9) {
+    return "Great";
+  } else if (value >= 9 && value < 9.5) {
+    return "Perfect"
+  } else {
+    return "GOAT"
+  }
+}
 
 const data = (average) => [
   { name: 'Average', value: average, fill: getColorForValue(average) },
@@ -51,6 +67,17 @@ export default function Average({ average }) {
               style={{fill: getColorForValue(average)}}
             >
               {average}
+            </text>
+
+            <text
+              x="50%"
+              y="64%"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              className="rate-games-chart-text"
+              style={{fill: getColorForMaxValue(average)}}
+            >
+              {getGameQuality(average)}
             </text>
 
           </RadialBarChart>
