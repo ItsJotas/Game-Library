@@ -51,16 +51,16 @@ const data = (average) => [
 export default function Average({ average }) {
 
   return (
-      <ResponsiveContainer width="80%" height="80%">
+      <ResponsiveContainer width="60%" height="60%">
           <RadialBarChart
-            cx="50%" cy="50%" innerRadius="76%" outerRadius="100%"
+            cx="50%" cy="60%" innerRadius="72%" outerRadius="100%"
             barSize={15} data={data(average)} startAngle={-120} endAngle={-420}
           >
             
           <RadialBar dataKey="value" />
             <text
               x="50%"
-              y="50%"
+              y="60%"
               textAnchor="middle"
               dominantBaseline="middle"
               className="rate-games-chart-value"
@@ -71,7 +71,7 @@ export default function Average({ average }) {
 
             <text
               x="50%"
-              y="64%"
+              y="74%"
               textAnchor="middle"
               dominantBaseline="middle"
               className="rate-games-chart-text"
