@@ -6,10 +6,16 @@ import BackButton from "../../components/returnButton/ReturnButton";
 import RateGamesChart from "../../components/rateGamesChart/RateGamesChart";
 
 const RateGamesPage = () => {
+
   const { gameId } = useParams();
   const navigate = useNavigate();
-
   const [gameName, setGameName] = useState(""); 
+  const [averageRating, setAverageRating] = useState(0);
+  
+  const backendIP = process.env.REACT_APP_BACKEND_IP;
+  const backendPort = process.env.REACT_APP_BACKEND_PORT;
+  const apiUrl = `http://${backendIP}:${backendPort}/game/unrated-games/${gameId}/rating`;
+  const gameInfoUrl = `http://${backendIP}:${backendPort}/game/${gameId}`;
 
   const [ratings, setRatings] = useState({
     gameplay: "",
@@ -23,11 +29,6 @@ const RateGamesPage = () => {
     competitiveBalance: "",
     coop: "",
   });
-
-  const backendIP = process.env.REACT_APP_BACKEND_IP;
-  const backendPort = process.env.REACT_APP_BACKEND_PORT;
-  const apiUrl = `http://${backendIP}:${backendPort}/game/unrated-games/${gameId}/rating`;
-  const gameInfoUrl = `http://${backendIP}:${backendPort}/game/${gameId}`;
 
   useEffect(() => {
     const fetchGameName = async () => {
@@ -48,6 +49,18 @@ const RateGamesPage = () => {
       [name]: value ? parseFloat(value) : "",
     }));
   };
+
+  useEffect(() => {
+    const validRatings = Object.values(ratings)
+      .filter((value) => value !== "" && !isNaN(value));
+    
+    if (validRatings.length > 0) {
+      const sum = validRatings.reduce((acc, val) => acc + val, 0);
+      setAverageRating(sum / validRatings.length);
+    } else {
+      setAverageRating(0);
+    }
+  }, [ratings]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -110,7 +123,7 @@ const RateGamesPage = () => {
             </form>
 
             <div class="rategames-chart-container">
-                <RateGamesChart average={9.7} />
+                <RateGamesChart average={averageRating} />
             </div>
           </div>   
         </div>

@@ -66,7 +66,7 @@ export default function Average({ average }) {
               className="rate-games-chart-value"
               style={{fill: getColorForValue(average)}}
             >
-              {average}
+              {average.toFixed(2)}
             </text>
 
             <text
