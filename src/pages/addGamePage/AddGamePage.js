@@ -10,7 +10,7 @@ const AddGamePage = () => {
 
   const [formData, setFormData] = useState({
     name: '',
-    storyModeStatusEnum: '',
+    campaignModeStatusEnum: '',
     multiplayerStatusEnum: '',
     achievementsStatusEnum: '',
     finishDate: '',
@@ -98,6 +98,25 @@ const AddGamePage = () => {
     setFormData({ ...formData, [name]: formattedValue });
   };
 
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      campaignModeStatusEnum: '',
+      multiplayerStatusEnum: '',
+      achievementsStatusEnum: '',
+      finishDate: '',
+      oneHundredPercentDate: '',
+      allAchievementsDate: '',
+      launcher: '',
+    });
+    setImage(null);
+    setImagePreview(null);
+    const fileInput = document.getElementById('imageInput');
+    if (fileInput) {
+      fileInput.value = '';
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -121,6 +140,7 @@ const AddGamePage = () => {
         },
       });
       alert('Game added successfully!');
+      resetForm();
     } catch (error) {
       console.error(error);
       alert('Failed to add game.');
