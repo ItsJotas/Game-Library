@@ -9,7 +9,7 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
       <div class="namecampaignstatus">
         <div class="gameform-inputs">
           <label class="gameform-text">Name: </label>
-          <input class="gameform-textinput" type="text" name="name" value={formData.name} onChange={handleChange} required/>
+          <input class="gameform-textinput" type="text" name="name" value={formData.name} onChange={handleChange} required autoComplete="off"/>
         </div>
 
         <SelectField 
@@ -40,7 +40,7 @@ const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, camp
 
         <div class="gameform-inputs">
           <label class="gameform-text">Launcher: </label>
-          <input class="gameform-textinput" type="text" name="launcher" value={formData.launcher} onChange={handleChange} required />
+          <input class="gameform-textinput" type="text" name="launcher" value={formData.launcher} onChange={handleChange} required autoComplete="off"/>
         </div>
       </div>
 
