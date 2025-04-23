@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import './HomePage.css';
+import editButton from './images/edit-button.png';
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const [games, setGames] = useState([]);
@@ -8,6 +10,7 @@ const HomePage = () => {
   const [hasMore, setHasMore] = useState(true);
   const [sortDirection, setSortDirection] = useState("asc");
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const CampaignStatusMessages = {
     NO_CAMPAIGN: "No Campaign",
@@ -151,6 +154,13 @@ const HomePage = () => {
                   <h3 class="gameName">{game.ranking} - {game.name}</h3>
                   <div  class="gameRating">
                     <p>({game.totalRating})</p>
+                  </div>
+
+                  <div class="editGameButton">
+                    <img onClick={() => navigate(`/edit-game/${game.id}`)}
+                      src={editButton}
+                      alt="Edit Button"
+                    />
                   </div>
                 </div>
 

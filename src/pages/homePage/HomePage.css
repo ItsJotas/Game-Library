@@ -133,6 +133,7 @@
 
 .nameRating {
   display: flex;
+  background-color: var(--header-background-color);
 }
 
 .gameName {
@@ -140,12 +141,10 @@
   padding: 10px 10px;
   text-align: left;
   font-family: var(--font-moderustic);
-  background-color: var(--header-background-color);
   color: var(--font-color-white);
 } 
 
 .gameRating {
-  background-color: var(--header-background-color);
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -168,6 +167,20 @@
   padding: 10px 0px 10px 10px;
   background-color: var(--search-bar-hover-color);
   line-height: 22px;
+}
+
+.editGameButton {
+  min-width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 20px;
+}
+
+.editGameButton img {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
