@@ -157,7 +157,7 @@ const HomePage = () => {
                   </div>
 
                   <div class="editGameButton">
-                    <img onClick={() => navigate(`/edit-game/${game.id}`)}
+                    <img onClick={() => navigate(`/edit-game/${game.id}`, { state: { game } })}
                       src={editButton}
                       alt="Edit Button"
                     />
