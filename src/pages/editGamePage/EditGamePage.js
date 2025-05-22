@@ -30,7 +30,7 @@ const EditGamePage = () => {
 
     const [formData, setFormData] = useState({
         name: game.name || '',
-        campaignModeStatusEnum: game.campaignModeStatusEnum || '',
+        campaignStatusEnum: game.campaignStatusEnum || '',
         multiplayerStatusEnum: game.multiplayerStatusEnum || '',
         achievementsStatusEnum: game.achievementsStatusEnum || '',
         finishDate: game.finishDate ? formatDate(formatToBRDate(game.finishDate)) : '',
@@ -112,7 +112,7 @@ const EditGamePage = () => {
       const resetForm = () => {
         setFormData({
           name: '',
-          campaignModeStatusEnum: '',
+          campaignStatusEnum: '',
           multiplayerStatusEnum: '',
           achievementsStatusEnum: '',
           finishDate: '',
