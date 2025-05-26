@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from 'axios';
 import { useLocation } from "react-router-dom";
 import GameForm from '../../components/GameForm';
+import { useNavigate } from "react-router-dom";
 
 const EditGamePage = () => {
     const backendIP = process.env.REACT_APP_BACKEND_IP;
@@ -10,6 +11,7 @@ const EditGamePage = () => {
 
     const location = useLocation();
     const game = location.state?.game;
+    const navigate = useNavigate();
 
     const formatDate = (value) => {
         let cleaned = value.replace(/\D/g, "");
@@ -109,25 +111,6 @@ const EditGamePage = () => {
         setFormData({ ...formData, [name]: formattedValue });
       };
     
-      const resetForm = () => {
-        setFormData({
-          name: '',
-          campaignStatusEnum: '',
-          multiplayerStatusEnum: '',
-          achievementsStatusEnum: '',
-          finishDate: '',
-          oneHundredPercentDate: '',
-          allAchievementsDate: '',
-          launcher: '',
-        });
-        setImage(null);
-        setImagePreview(null);
-        const fileInput = document.getElementById('imageInput');
-        if (fileInput) {
-          fileInput.value = '';
-        }
-      };
-    
       const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -151,7 +134,7 @@ const EditGamePage = () => {
             },
           });
           alert('Game edited successfully!');
-          resetForm();
+          navigate(-1);
         } catch (error) {
           console.error(error);
           alert('Failed to edit game.');
