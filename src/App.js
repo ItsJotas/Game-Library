@@ -1,10 +1,10 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/homePage/HomePage';
 import AddGamePage from './pages/addGamePage/AddGamePage';
 import RateGamesPage from './pages/rateGamesPage/RateGamesPage';
 import UnratedGamesPage from './pages/unratedGamesPage/UnratedGamesPage';
 import EditGamePage from './pages/editGamePage/EditGamePage';
+import CollectionsPage from './pages/collectionsPage/CollectionsPage';
 import Navbar from './components/navbar/Navbar';
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
         <Route path="/edit-game/:gameId" element={<EditGamePage />} />
         <Route path="/unrated-games" element={<UnratedGamesPage />} />
         <Route path="/unrated-games/:gameId/rating" element={<RateGamesPage />} />
+        <Route path="/collections" element={<CollectionsPage />} />
       </Routes>
     </Router>
   );
