@@ -1,0 +1,87 @@
+.collections-page {
+    margin-left: 250px;  
+    height: 100vh;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease-in-out;
+    background-color: var(--search-bar-color);
+}
+
+.collections-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-moderustic);
+    background-color: var(--header-background-color);
+}
+
+.collections-header h1 {
+    color: var(--font-color-white);
+    margin: 20px auto;
+}
+
+.collections-controls {
+    margin-bottom: 20px;
+    display: flex;
+    width: 80%;
+    align-content: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.search-bar {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: var(--search-bar-color);
+    border: 0px;
+    margin: 0 auto;
+    font-family: var(--font-moderustic);
+    flex-grow: 1;
+    color: var(--font-color-white);
+    transition-property: background-color;
+    transition-duration: var(--search-bar-duration);
+}
+
+.search-bar::placeholder {
+    color: var(--font-color-white);
+}
+
+.search-bar:hover {
+    background-color: var(--search-bar-hover-color);
+}
+
+.search-bar:focus {
+    outline: none;
+    background-color: var(--search-bar-hover-color);
+    color: var(--font-color-white);
+}
+
+.sort-button {
+  font-size: 14px;
+  padding: 8px;
+  font-family: var(--font-moderustic);
+  border-radius: var(--border-radius-bar);
+  background-color: var(--search-bar-color);
+  color: var(--font-color-white);
+  border: 0px;
+  transition-property: background-color;
+  transition-duration: var(--search-bar-duration);
+  cursor: pointer;
+}
+
+.sort-button:hover {
+  background-color: var(--search-bar-hover-color);
+}
+
+@media (max-width: 768px) {
+    .collections-page {
+        margin-left: 200px; 
+    }
+}
+
+@media (max-width: 500px) {
+    .collections-page {
+        margin-left: 0; 
+    }
+}

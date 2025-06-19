@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import './HomePage.css';
 import editButton from './images/edit-button.png';
 import { useNavigate } from "react-router-dom";
@@ -58,7 +58,7 @@ const HomePage = () => {
         setHasMore(false);
       }
     } catch (error) {
-      console.error("Erro ao carregar os jogos:", error);
+      console.error("Failed to fetch games:", error);
     } finally {
       setIsLoading(false);
     }
