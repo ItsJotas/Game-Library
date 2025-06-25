@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from "react-router-dom";
 import './CollectionsPage.css';
+import CollectionCard from '../../components/collectionCard/CollectionCard';
 
 const CollectionsPage = () => {
 
@@ -20,14 +21,21 @@ const CollectionsPage = () => {
         setIsLoading(true);
         try {
             const response = await fetch(
-            `${apiUrl}/all?pageNumber=${pageNumber}&pageSize=20&orderBy=${sortDirection}&gameName=${query}`
-        );
+                `${apiUrl}/all?pageNumber=${pageNumber}&pageSize=20&orderBy=${sortDirection}`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({name: query?.trim() ? query : null})
+                }
+            );
 
             const data = await response.json();
             if (data.content && data.content.length > 0) {
                 setCollection((prevCollections) => {
                     const newCollections = data.content.filter((collection) => 
-                    !prevCollections.some((prevCollections) => prevCollections.id === collection.id)
+                        !prevCollections.some((prev) => prev.id === collection.id)
                     );
                     return [...prevCollections, ...newCollections];
                 });
@@ -39,7 +47,7 @@ const CollectionsPage = () => {
         } finally {
             setIsLoading(false);
         }
-      }, [apiUrl, sortDirection]); 
+    }, [apiUrl, sortDirection]);
 
     const handleSearchChange = (event) => {
         setSearchQuery(event.target.value);
@@ -96,15 +104,14 @@ const CollectionsPage = () => {
                 
             </div>
             
-            {isLoading && <p>Loading your Game Collections...</p>}
-            <ul>
-                {collection.map((item) => (
-                    <li key={item.id} onClick={() => navigate(`/collection/${item.id}`)}>
-                        {item.name}
-                    </li>
+            <div className='collections-main'>
+                {collection.map((item, index) => (
+                    <CollectionCard collection={item} index={index} />
                 ))}
-            </ul>
-            {!hasMore && <p>No more collections to load.</p>}
+            </div>
+
+            {isLoading && <p class="loading">Loading your Game Collections...</p>}
+            {!hasMore && <p class="loading">That's all of your Game Collections!</p>}
         </div>
     );
 }
