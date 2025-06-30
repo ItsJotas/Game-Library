@@ -105,9 +105,11 @@ const CollectionsPage = () => {
             </div>
             
             <div className='collections-main'>
-                {collection.map((item, index) => (
-                    <CollectionCard collection={item} index={index} />
-                ))}
+                <div className='cards-container'>
+                    {collection.map((item, index) => (
+                        <CollectionCard collection={item} index={index} />
+                    ))}
+                </div>
             </div>
 
             {isLoading && <p class="loading">Loading your Game Collections...</p>}

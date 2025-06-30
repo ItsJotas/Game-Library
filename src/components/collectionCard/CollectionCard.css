@@ -3,7 +3,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 36%;
+    width: 500px;
+    height: 64px;
     margin: 0 auto;
     padding: 16px;
     background: 
@@ -24,14 +25,25 @@
   transform: scale(1.05);
 }
 
-.collection-name{
-    font-family: var(--font-moderustic);
-    font-size: 20px;
+.collection-name,
+.collection-rating,
+.collection-count {
+    font-size: clamp(14px, 2vw, 20px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
 }
 
-.collection-rating {
+.collection-name {
+    font-family: var(--font-moderustic);
+    width: 60%;
+
+}
+
+.collection-rating,
+.collection-count {
     font-family: var(--font-lato);
-    font-size: 20px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    width: 20%;
+    text-align: right;
 }

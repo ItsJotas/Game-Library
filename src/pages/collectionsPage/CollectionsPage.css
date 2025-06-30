@@ -71,15 +71,23 @@
 }
 
 .sort-button:hover {
-  background-color: var(--search-bar-hover-color);
+    background-color: var(--search-bar-hover-color);
 }
 
 .collections-main {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     background-color: var(--search-bar-color);
     margin-top: 20px;
+}
+
+.cards-container {
+    display: grid;
+    flex-wrap: wrap;
+    width: 90%; 
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px; 
 }
 
 @media (max-width: 768px) {
@@ -91,5 +99,11 @@
 @media (max-width: 500px) {
     .collections-page {
         margin-left: 0; 
+    }
+}
+
+@media (max-width: 1200px) {
+    .cards-container {
+        grid-template-columns: 1fr;
     }
 }
