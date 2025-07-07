@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from "react-router-dom";
 import './CollectionsPage.css';
 import CollectionCard from '../../components/collectionCard/CollectionCard';
+import GenericButton from '../../components/genericButton/GenericButton';
 
 const CollectionsPage = () => {
 
@@ -89,19 +90,25 @@ const CollectionsPage = () => {
             <div className="collections-header">
                 <h1>Game Collections</h1>
 
-                <div className="collections-controls">
-                    <input
-                        type="text"
-                        placeholder="Search by Name"
-                        value={searchQuery}
-                        onChange={handleSearchChange}
-                        class="search-bar"
+                <div className="collections-header-buttons">
+                    <div className="collections-controls">
+                        <input
+                            type="text"
+                            placeholder="Search by Name"
+                            value={searchQuery}
+                            onChange={handleSearchChange}
+                            class="search-bar"
+                        />
+                        <button onClick={toggleSortDirection} class="sort-button">
+                            Name: {sortDirection === "asc" ? "Asc" : "Desc"}
+                        </button>
+                    </div>
+
+                    <GenericButton
+                        buttonText="+ New Collection"
+                        navigateLink="/create-collection"
                     />
-                    <button onClick={toggleSortDirection} class="sort-button">
-                        Name: {sortDirection === "asc" ? "Asc" : "Desc"}
-                    </button>
                 </div>
-                
             </div>
             
             <div className='collections-main'>
