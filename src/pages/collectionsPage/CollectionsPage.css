@@ -20,8 +20,15 @@
     margin: 20px auto;
 }
 
+.collections-header-buttons {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+}
+
 .collections-controls {
-    margin-bottom: 20px;
     display: flex;
     width: 80%;
     align-content: center;
