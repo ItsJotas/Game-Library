@@ -8,7 +8,7 @@
     margin: 0 auto;
     padding: 16px;
     background: 
-        linear-gradient(90deg, rgb(0, 0, 0) 0%, var(--header-background-color-alt, #c42828) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.822) 0%, var(--header-background-color-alt, #b4be1e) 100%),
         radial-gradient(circle at 10% 20%, rgba(255,255,255,0.12) 2px, transparent 2.5px),
         radial-gradient(circle at 40% 60%, rgba(255,255,255,0.10) 1.5px, transparent 2px),
         radial-gradient(circle at 80% 30%, rgba(255,255,255,0.15) 1.8px, transparent 2.3px),
