@@ -22,7 +22,7 @@ const CollectionsPage = () => {
         setIsLoading(true);
         try {
             const response = await fetch(
-                `${apiUrl}/all?pageNumber=${pageNumber}&pageSize=20&orderBy=${sortDirection}`,
+                `${apiUrl}/all?pageNumber=${pageNumber}&pageSize=20`,
                 {
                     method: 'POST',
                     headers: {
@@ -50,6 +50,19 @@ const CollectionsPage = () => {
         }
     }, [apiUrl, sortDirection]);
 
+    const fixedIds = new Set([1, 2, 3, 4]);
+    const fixedCollections = [1, 2, 3, 4].map(id => collection.find(item => item.id === id)).filter(Boolean);
+
+    const sortedCollections = collection
+        .filter(item => !fixedIds.has(item.id))
+        .sort((a, b) => {
+            const nameA = a.name?.toLowerCase() || '';
+            const nameB = b.name?.toLowerCase() || '';
+            return sortDirection === "asc"
+                ? nameA.localeCompare(nameB)
+                : nameB.localeCompare(nameA);
+    });
+
     const handleSearchChange = (event) => {
         setSearchQuery(event.target.value);
     };
@@ -58,7 +71,7 @@ const CollectionsPage = () => {
         setCollection([]); 
         setPage(0); 
         setHasMore(true); 
-    }, [sortDirection, searchQuery]);
+    }, [searchQuery]);
 
     const toggleSortDirection = () => {
         setSortDirection((prevDirection) => (prevDirection === "asc" ? "desc" : "asc"));
@@ -113,9 +126,20 @@ const CollectionsPage = () => {
             
             <div className='collections-main'>
                 <div className='cards-container'>
-                    {collection.map((item, index) => (
-                        <CollectionCard collection={item} index={index} />
+                    {fixedCollections.map((item, index) => (
+                        <CollectionCard key={item.id} collection={item} index={index} />
                     ))}
+                </div>
+
+                {sortedCollections.length > 0 && (
+                    <div className="collections-divider"></div>
+                )}
+
+                <div className='cards-container'>
+                    {sortedCollections.map((item, index) => (
+                        <CollectionCard key={item.id} collection={item} index={index + fixedCollections.length}/>
+                    ))}
+
                 </div>
             </div>
 

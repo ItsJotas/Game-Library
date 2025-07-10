@@ -97,6 +97,12 @@
     row-gap: 20px; 
 }
 
+.collections-divider {
+    width: 80%;
+    margin: 20px 0;
+    border-top: 3px solid var(--font-color-white);
+}
+
 @media (max-width: 768px) {
     .collections-page {
         margin-left: 200px; 
