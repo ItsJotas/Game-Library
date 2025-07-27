@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import GameForm from '../../components/GameForm';
 import './AddGamePage.css';

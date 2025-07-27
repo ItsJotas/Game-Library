@@ -1,0 +1,67 @@
+.create-collection-page {
+    margin-left: 250px;  
+    height: 100vh;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease-in-out;
+    background-color: var(--search-bar-color);
+}
+
+.header-create-collection {
+    background-color: var(--header-background-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-moderustic);
+}
+
+.header-create-collection h1 {
+    color: var(--font-color-white);
+    padding: 20px;
+}
+
+.create-collection-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--search-bar-color);
+}
+
+.collection-form {
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px;
+    width: 80%;
+    padding-top: 20px; 
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.collection-form-inputs {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+    width: 100%;
+}
+
+.collection-form-text {
+    color: var(--font-color-white);
+    font-family: var(--font-moderustic);
+    font-size: 18px;
+}
+
+.collection-form-text-input {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: var(--header-background-color);
+    border: 0px;
+    margin: 0 0;
+    width: 40%;
+    color: var(--font-color-white);
+    font-family: var(--font-moderustic);
+    transition-property: background-color;
+    transition-duration: var(--search-bar-duration);
+}

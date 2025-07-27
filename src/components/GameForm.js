@@ -1,7 +1,5 @@
-import React from 'react';
-
 const GameForm = ({ formData, handleChange, handleSubmit, handleFileChange, campaignStatuses, multiplayerStatuses, 
-  achievementsStatuses, SelectField, image, imagePreview }) => {
+  achievementsStatuses, SelectField, imagePreview }) => {
 
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data" class="gameform">

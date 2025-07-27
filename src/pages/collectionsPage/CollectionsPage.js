@@ -48,7 +48,7 @@ const CollectionsPage = () => {
         } finally {
             setIsLoading(false);
         }
-    }, [apiUrl, sortDirection]);
+    }, [apiUrl]);
 
     const fixedIds = new Set([1, 2, 3, 4]);
     const fixedCollections = [1, 2, 3, 4].map(id => collection.find(item => item.id === id)).filter(Boolean);
