@@ -85,6 +85,21 @@ const CollectionForm = ({ formData, handleChange, handleSubmit, games }) => {
                     styles={customStyles}
                 />
             </div>
+
+            <div className="collection-form-inputs">
+                <label className="collection-form-text">Collection Color:</label>
+                <input
+                    type="color"
+                    name="color"
+                    value={formData.color}
+                    onChange={handleChange}
+                    className="collection-form-color-input"
+                />
+            </div>
+
+            <button type="submit" className="btn-save-collection">
+                + Save Collection
+            </button>
             
         </form>
     )

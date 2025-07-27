@@ -65,3 +65,41 @@
     transition-property: background-color;
     transition-duration: var(--search-bar-duration);
 }
+
+.collection-form-color-input {
+    width: 60px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #444;
+    border-radius: 4px;
+    padding: 0;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.collection-form-color-input::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.collection-form-color-input::-webkit-color-swatch {
+    border: none;
+    border-radius: 4px;
+}
+
+.collection-form-color-input:focus {
+    outline: 2px solid #1e90ff;
+}
+
+.btn-save-collection {
+  background-color: #007bff;
+  color: var(--font-color-white);
+  font-family: var(--font-lato);
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
