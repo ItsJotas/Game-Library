@@ -1,108 +1,71 @@
-import Select from 'react-select';
-
-const CollectionForm = ({ formData, handleChange, handleSubmit, games }) => {
-
-    const gameOptions = games.map(game => ({
-        value: game.id,
-        label: game.name
-    }));
-
-    const handleGameChange = (selectedOptions) => {
-        const selectedIds = selectedOptions ? selectedOptions.map(option => option.value) : [];
-        handleChange({
-            target: {
-                name: 'gameIds',
-                value: selectedIds
-            }
-        });
-    };
-
-    const customStyles = {
-        control: (base) => ({
-            ...base,
-            backgroundColor: 'var(--header-background-color)',
-            border: 'none',
-            color: 'var(--font-color-white)',
-            fontFamily: 'var(--font-moderustic)',
-        }),
-        input: (base) => ({
-            ...base,
-            color: 'var(--font-color-white)',
-        }),
-        singleValue: (base) => ({
-            ...base,
-            color: 'var(--font-color-white)',
-            }),
-        menu: (base) => ({
-            ...base,
-            backgroundColor: 'var(--header-background-color)',
-            border: 'none',
-            boxShadow: 'none',
-            marginTop: 0,
-        }),
-        menuList: (base) => ({
-            ...base,
-            backgroundColor: 'var(--header-background-color)',
-            padding: 0,
-        }),
-        option: (base, state) => ({
-            ...base,
-            backgroundColor: state.isFocused
-                ? '#000000'
-                : 'var(--header-background-color)',
-            color: 'var(--font-color-white)',
-            fontFamily: 'var(--font-moderustic)',
-        }),
-        multiValue: (base) => ({
-            ...base,
-            backgroundColor: 'var(--font-color-white)',
-            color: 'var(--header-background-color)',
-        }),
-        multiValueLabel: (base) => ({
-            ...base,
-            color: 'var(--header-background-color)',
-            fontFamily: 'var(--font-moderustic)',
-        }),
-    };
+const CollectionForm = ({
+    formData,
+    handleChange,
+    handleSubmit,
+    selectedGames,
+    onAddGameClick,
+    onRemoveGameClick
+}) => {
 
     return (
         <form onSubmit={handleSubmit} className="collection-form">
 
-            <div class="collection-form-inputs">
-                <label class="collection-form-text">Collection Name: </label>
-                <input class="collection-form-text-input" type="text" name="name" value={formData.name} onChange={handleChange} required autoComplete="off"/>
+            <div className="collection-form-row">
+                <div className="collection-form-inputs">
+                    <label className="collection-form-text">Collection Name:</label>
+                    <input
+                        className="collection-form-text-input"
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        autoComplete="off"
+                    />
+                </div>
+
+                <div className="collection-form-inputs color-selector">
+                    <label className="collection-form-text">Color:</label>
+                    <input
+                        type="color"
+                        name="color"
+                        value={formData.color}
+                        onChange={handleChange}
+                        className="collection-form-color-input"
+                    />
+                </div>
             </div>
 
-            <div className="collection-form-inputs">
+            <div className="games-section">
                 <label className="collection-form-text">Games:</label>
-                <Select
-                    isMulti
-                    options={gameOptions}
-                    className="react-select-container"
-                    classNamePrefix="react-select"
-                    onChange={handleGameChange}
-                    value={gameOptions.filter(option => formData.gameIds.includes(option.value))}
-                    styles={customStyles}
-                />
-            </div>
+                
+                <div className="games-grid">
+                    <div className="game-card add-card" onClick={onAddGameClick}>
+                        <span className="add-icon">+</span>
+                    </div>
 
-            <div className="collection-form-inputs">
-                <label className="collection-form-text">Collection Color:</label>
-                <input
-                    type="color"
-                    name="color"
-                    value={formData.color}
-                    onChange={handleChange}
-                    className="collection-form-color-input"
-                />
+                    {selectedGames.length > 0 && selectedGames.map((game) => (
+                        <div key={game.id} className="game-card-container">
+                            <div className="remove-button" onClick={() => onRemoveGameClick(game.id)}>
+                                <p>x</p>
+                            </div>
+
+                            <div className="game-card" title={game.name}>
+                                <img src={game.imageUrl} alt={game.name} className="game-image" />
+                                <div className="game-card-overlay">
+                                    <span className="game-name">{game.name}</span>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
 
             <button type="submit" className="btn-save-collection">
-                + Save Collection
+                Save Collection
             </button>
-            
         </form>
-    )
-}
+    );
+};
 
 export default CollectionForm;

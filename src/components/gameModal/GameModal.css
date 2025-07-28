@@ -1,0 +1,50 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--search-bar-color);
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  color: var(--font-color-white);
+  font-family: var(--font-moderustic);
+}
+
+.game-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.game-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #444;
+}
+
+.game-list li:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-close-btn {
+  margin-top: 15px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}

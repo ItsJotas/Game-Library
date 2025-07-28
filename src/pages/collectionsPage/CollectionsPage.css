@@ -103,6 +103,12 @@
     border-top: 3px solid var(--font-color-white);
 }
 
+.loading {
+    font-family: var(--font-moderustic);
+    text-align: center;
+    background-color: var(--search-bar-color);
+}
+
 @media (max-width: 768px) {
     .collections-page {
         margin-left: 200px; 
