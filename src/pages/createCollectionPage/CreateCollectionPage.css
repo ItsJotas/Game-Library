@@ -146,8 +146,8 @@
 }
 
 .game-card {
-    width: 140px;
-    height: 180px;
+    width: 160px;
+    height: 220px;
     border: 2px solid white;
     border-radius: 6px;
     overflow: hidden;
@@ -188,8 +188,8 @@
 
 .game-card-container {
     position: relative;
-    width: 140px;
-    height: 180px;
+    width: 160px;
+    height: 220px;
 }
 
 .remove-button {
@@ -247,6 +247,13 @@
   word-wrap: break-word;
   white-space: normal;
   overflow-wrap: anywhere;
+}
+
+.create-collection-back-button {
+    margin-top: 20px;
+    display: flex;
+    width: 80%;
+    align-items: center;    
 }
 
 @media (max-width: 768px) {

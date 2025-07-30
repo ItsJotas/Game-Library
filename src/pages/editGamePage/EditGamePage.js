@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from 'axios';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import GameForm from '../../components/GameForm';
-import { useNavigate } from "react-router-dom";
+import BackButton from "../../components/returnButton/ReturnButton";
+import './EditGamePage.css';
 
 const EditGamePage = () => {
     const backendIP = process.env.REACT_APP_BACKEND_IP;
@@ -149,6 +150,10 @@ const EditGamePage = () => {
           </div>
           
           <div class="addgame-main">
+              <div class="edit-game-page-back-button">
+                  <BackButton />
+              </div>
+
             <GameForm
               formData={formData}
               handleChange={handleChange}

@@ -3,6 +3,7 @@ import CollectionForm from '../../components/CollectionForm';
 import GameModal from '../../components/gameModal/GameModal';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import BackButton from "../../components/returnButton/ReturnButton";
 
 const CreateCollectionPage = () => {
     const backendIP = process.env.REACT_APP_BACKEND_IP;
@@ -80,6 +81,10 @@ const CreateCollectionPage = () => {
             </div>
 
             <div className="create-collection-main">
+              <div className="create-collection-back-button">
+                  <BackButton />
+              </div>
+
               <CollectionForm
                 formData={formData}
                 handleChange={handleChange}

@@ -20,6 +20,10 @@
   font-family: var(--font-moderustic);
 }
 
+.modal-content h2{
+  margin: 0 0 20px 0;
+}
+
 .game-list {
   list-style: none;
   padding: 0;
@@ -35,7 +39,7 @@
 }
 
 .game-list li:hover {
-  background-color: #007bff;
+  background-color: var(--header-background-color);
   color: white;
 }
 
@@ -47,4 +51,5 @@
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 6px;
+  font-family: var(--font-moderustic);
 }
