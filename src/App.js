@@ -7,6 +7,7 @@ import EditGamePage from './pages/editGamePage/EditGamePage';
 import CollectionsPage from './pages/collectionsPage/CollectionsPage';
 import Navbar from './components/navbar/Navbar';
 import CreateCollectionPage from './pages/createCollectionPage/CreateCollectionPage';
+import EditCollectionsPage from './pages/editCollectionsPage/EditCollectionsPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/unrated-games/:gameId/rating" element={<RateGamesPage />} />
         <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/create-collection" element={<CreateCollectionPage />} />
+        <Route path="/edit-collection/:collectionId" element={<EditCollectionsPage />} />
       </Routes>
     </Router>
   );

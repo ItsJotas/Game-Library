@@ -1,5 +1,4 @@
 import { useEffect, useState, useCallback } from 'react';
-import { useNavigate } from "react-router-dom";
 import './CollectionsPage.css';
 import CollectionCard from '../../components/collectionCard/CollectionCard';
 import GenericButton from '../../components/genericButton/GenericButton';
@@ -12,8 +11,7 @@ const CollectionsPage = () => {
     const [hasMore, setHasMore] = useState(true);
     const [sortDirection, setSortDirection] = useState("asc");
     const [searchQuery, setSearchQuery] = useState("");
-    const navigate = useNavigate();
-    
+        
     const backendIP = process.env.REACT_APP_BACKEND_IP;
     const backendPort = process.env.REACT_APP_BACKEND_PORT;
     const apiUrl = `http://${backendIP}:${backendPort}/game-collection`;
@@ -137,7 +135,11 @@ const CollectionsPage = () => {
 
                 <div className='cards-container'>
                     {sortedCollections.map((item, index) => (
-                        <CollectionCard key={item.id} collection={item} index={index + fixedCollections.length}/>
+                        <CollectionCard 
+                            key={item.id} 
+                            collection={item} 
+                            index={index + fixedCollections.length}
+                        />
                     ))}
 
                 </div>

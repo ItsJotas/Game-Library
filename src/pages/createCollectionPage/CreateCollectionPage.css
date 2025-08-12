@@ -115,10 +115,15 @@
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 6px;
+    width: 160px;
     border: none;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.2s ease;
+}
+
+.btn-save-collection:hover {
+    background-color: #0056b3;
 }
 
 .collection-form-row {
@@ -134,7 +139,7 @@
 .games-section {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
 }
 

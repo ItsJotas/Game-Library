@@ -97,7 +97,7 @@ const CreateCollectionPage = () => {
 
             {showModal && (
               <GameModal
-                games={games.filter(g => !formData.gameIds.includes(g.id))} // filter out selected
+                games={games.filter(g => !formData.gameIds.includes(g.id))}
                 onSelectGame={handleSelectGame}
                 onClose={() => setShowModal(false)}
               />
